@@ -1,0 +1,98 @@
+C:\Users\Arash\source\repos\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+C:\Users\Arash\source\repos\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+C:\Users\Arash\source\repos\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+C:\Users\Arash\source\repos\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+C:\Users\Arash\source\repos\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+C:\Users\Arash\source\repos\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+C:\Users\Arash\source\repos\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+C:\Users\Arash\source\repos\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+C:\Users\Arash\source\repos\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+G:\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+G:\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+G:\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+G:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+G:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+G:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+G:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+G:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\new\old\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\new\old\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\new\old\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\new\old\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\new\old\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\new\old\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\new\old\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\new\old\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\new\old\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+G:\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\testdc\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\testdc\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\testdc\POD_Async\POD_Async\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\testdc\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\testdc\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\testdc\POD_Async\POD_Async\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\Chat\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\Chat\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\Chat\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.csprojAssemblyReference.cache
+D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb

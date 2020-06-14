@@ -1,0 +1,129 @@
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+C:\Users\Arash\source\repos\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+G:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+G:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+G:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+G:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+G:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+G:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+G:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+G:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+G:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+G:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+G:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+G:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\17-3-2020\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\new\old\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\new\old\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\new\old\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\new\old\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\new\old\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\new\old\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\new\old\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\new\old\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\new\old\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\new\old\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\new\old\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\new\old\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\kamelan new\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\testdc\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+G:\POD_Async\POD_Async\POD_Async\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\testdc\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\testdc\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\testdc\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\testdc\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\testdc\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\testdc\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\testdc\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\testdc\POD_Async\POD_Async\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\testdc\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\testdc\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\testdc\POD_Async\POD_Async\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\Chat\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+D:\Chat\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+D:\Chat\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+D:\Chat\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
+D:\Chat\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
+D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb

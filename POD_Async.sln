@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POD_Async", "POD_Async\POD_Async.csproj", "{87D62962-5311-49BA-93F2-67FCD3D29A3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POD_Chat", "POD_Chat\POD_Chat.csproj", "{2A40BCB3-8E61-413B-8E8D-86575022AB08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POD_Test", "POD_Test\POD_Test.csproj", "{78E454A8-B1D6-45EE-99CE-E29C3A874B0F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87D62962-5311-49BA-93F2-67FCD3D29A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D62962-5311-49BA-93F2-67FCD3D29A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D62962-5311-49BA-93F2-67FCD3D29A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D62962-5311-49BA-93F2-67FCD3D29A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A40BCB3-8E61-413B-8E8D-86575022AB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A40BCB3-8E61-413B-8E8D-86575022AB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A40BCB3-8E61-413B-8E8D-86575022AB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A40BCB3-8E61-413B-8E8D-86575022AB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E454A8-B1D6-45EE-99CE-E29C3A874B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E454A8-B1D6-45EE-99CE-E29C3A874B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E454A8-B1D6-45EE-99CE-E29C3A874B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E454A8-B1D6-45EE-99CE-E29C3A874B0F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A27EE06E-EE06-4918-872E-19453033AF05}
+	EndGlobalSection
+EndGlobal
