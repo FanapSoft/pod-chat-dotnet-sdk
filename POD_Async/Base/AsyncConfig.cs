@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using Apache.NMS;
 using POD_Async.Exception;
 using POD_Async.Model;
 
@@ -22,7 +23,9 @@ namespace POD_Async.Base
         public string FileServer { get; }
         public string PlatformHost { get; }
         public string SsoHost { get; }
-
+        public int ConsumersCount { get; } = 1;
+        public AcknowledgementMode AckMode { get; }
+        public AcknowledgementMode ConnectionAckMode { get; }
 
         public AsyncConfig(Builder builder)
         {
@@ -36,6 +39,9 @@ namespace POD_Async.Base
             FileServer = builder.GetFileServer();
             PlatformHost = builder.GetPlatformHost();
             SsoHost = builder.GetSsoHost();
+            ConsumersCount = builder.GetConsumersCount();
+            AckMode = builder.GetAckMode();
+            ConnectionAckMode = builder.GetConnectionAckMode();
         }
         public class Builder
         {
@@ -50,9 +56,12 @@ namespace POD_Async.Base
             [Required] private string queueSend;
             [Required] private long? queueConnectionTimeout;
             [Required] private string serverName;
-            [Url][Required] private string fileServer;
-            [Url][Required] private string platformHost;
-            [Url][Required] private string ssoHost;
+            [Url] [Required] private string fileServer;
+            [Url] [Required] private string platformHost;
+            [Url] [Required] private string ssoHost;
+            private int consumersCount;
+            private AcknowledgementMode ackMode;
+            private AcknowledgementMode connectionAckMode;
 
             public string GetQueueUrl()
             {
@@ -156,6 +165,40 @@ namespace POD_Async.Base
                 this.ssoHost = ssoHost;
                 return this;
             }
+
+            public int GetConsumersCount()
+            {
+                return consumersCount;
+            }
+
+            public Builder SetConsumersCount(int consumersCount)
+            {
+                this.consumersCount = consumersCount;
+                return this;
+            }
+
+            public AcknowledgementMode GetAckMode()
+            {
+                return ackMode;
+            }
+
+            public Builder SetAckMode(AcknowledgementMode ackMode)
+            {
+                this.ackMode = ackMode;
+                return this;
+            }
+
+            public AcknowledgementMode GetConnectionAckMode()
+            {
+                return connectionAckMode;
+            }
+
+            public Builder SetConnectionAckMode(AcknowledgementMode connectionAckMode)
+            {
+                this.connectionAckMode = connectionAckMode;
+                return this;
+            }
+
             public AsyncConfig Build()
             {
                 var hasErrorFields = this.ValidateByAttribute();

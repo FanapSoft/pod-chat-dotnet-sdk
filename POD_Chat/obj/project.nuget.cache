@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kLa+zfLwKeiSUEa17ctAwNtait5XnMLzOFz3NYl4ibIMQJUA1M2TCEjtaeKDFxWXud7vvm5/0nH8ESkVU1b9dw==",
+  "dgSpecHash": "TOpV5pqBozkjiQaUOC2yej+OeH7So0/F0HP7ykLFHEKjF9PQcAfPev7GDbPx8nPmzyzTYt9LbQUeGiob9CP+ig==",
   "success": true,
   "projectFilePath": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
   "expectedPackageFiles": [
@@ -13,7 +13,7 @@
     "C:\\Users\\Arash\\.nuget\\packages\\restsharp\\106.11.3\\restsharp.106.11.3.nupkg.sha512",
     "C:\\Users\\Arash\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0-preview.3.20214.6\\system.componentmodel.annotations.5.0.0-preview.3.20214.6.nupkg.sha512",
     "C:\\Users\\Arash\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\pod_async\\0.7.2\\pod_async.0.7.2.nupkg.sha512"
+    "C:\\Users\\Arash\\.nuget\\packages\\pod_async\\0.9.1.1\\pod_async.0.9.1.1.nupkg.sha512"
   ],
   "logs": [
     {

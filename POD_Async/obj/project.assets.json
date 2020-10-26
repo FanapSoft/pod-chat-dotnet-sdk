@@ -511,7 +511,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.7.2",
+    "version": "0.9.1.1",
     "restore": {
       "projectUniqueName": "D:\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj",
       "projectName": "POD_Async",

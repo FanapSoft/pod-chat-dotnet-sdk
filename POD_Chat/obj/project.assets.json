@@ -92,7 +92,7 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
-      "POD_Async/0.7.2": {
+      "POD_Async/0.9.1.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -512,7 +512,7 @@
         "version.txt"
       ]
     },
-    "POD_Async/0.7.2": {
+    "POD_Async/0.9.1.1": {
       "type": "project",
       "path": "../POD_Async/POD_Async.csproj",
       "msbuildProject": "../POD_Async/POD_Async.csproj"
@@ -521,7 +521,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "POD_Async >= 0.7.2"
+      "POD_Async >= 0.9.1.1"
     ]
   },
   "packageFolders": {
@@ -529,7 +529,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
-    "version": "0.7.2",
+    "version": "0.9.1.1",
     "restore": {
       "projectUniqueName": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
       "projectName": "POD_Chat",

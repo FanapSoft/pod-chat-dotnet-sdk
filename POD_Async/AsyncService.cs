@@ -33,14 +33,6 @@ namespace POD_Async
 
         #endregion Producer
 
-        #region Consumer
-
-        private IConnection consumerConnection;
-        private IMessageConsumer consumer;
-        private ISession consumerSession;
-
-        #endregion Consumer
-
         #endregion Field
 
         #region Constructor
@@ -60,23 +52,26 @@ namespace POD_Async
         private void CreateProducer()
         {
             producerConnection = CreateConnection();
-            producerSession = producerConnection.CreateSession(AcknowledgementMode.ClientAcknowledge);
+            producerSession = producerConnection.CreateSession(config.AckMode);
             producer = producerSession.CreateProducer(producerSession.GetQueue(config.QueueSend));
         }
 
         private void CreateConsumer()
         {
-            consumerConnection = CreateConnection();
-            consumerSession = consumerConnection.CreateSession(AcknowledgementMode.ClientAcknowledge);
-            consumer = consumerSession.CreateConsumer(consumerSession.GetQueue(config.QueueReceive));
-            consumer.Listener += OnMessageReceived;
+            for (var i = 0; i < config.ConsumersCount; i++)
+            {
+                var consumerConnection = CreateConnection();
+                var consumerSession = consumerConnection.CreateSession(config.AckMode);
+                var consumer = consumerSession.CreateConsumer(consumerSession.GetQueue(config.QueueReceive));
+                consumer.Listener += OnMessageReceived;
+            }
         }
 
         private IConnection CreateConnection()
         {
             IConnectionFactory factory = new ConnectionFactory(config.QueueUrl);
             var connection = factory.CreateConnection(config.QueueUsername, config.QueuePassword);
-            connection.AcknowledgementMode = AcknowledgementMode.ClientAcknowledge;
+            connection.AcknowledgementMode = config.ConnectionAckMode;
             connection.Start();
             return connection;
         }
@@ -115,7 +110,7 @@ namespace POD_Async
                     }
                 }
                 else
-                {               
+                {
                     throw PodException.BuildException(new AsyncException(0, "ActiveMqMessage does not have any content.", ""));
                 }
             }
@@ -149,7 +144,7 @@ namespace POD_Async
 
             var errorJson = asyncException.ToJson();
             PodLogger.Logger.Error(errorJson);
-            AsyncError?.Invoke(errorJson);           
+            AsyncError?.Invoke(errorJson);
         }
 
         #endregion Response_Handling
@@ -195,19 +190,5 @@ namespace POD_Async
         }
 
         #endregion Send & Wrap Message
-
-        #region ShutDown
-
-        public void Dispose()
-        {
-            producerSession.Dispose();
-            consumerSession.Dispose();
-            consumerConnection.Dispose();
-            producerConnection.Dispose();
-            producer.Dispose();
-            consumer.Dispose();
-        }
-
-        #endregion
     }
 }

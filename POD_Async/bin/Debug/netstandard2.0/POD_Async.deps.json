@@ -1,13 +1,13 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "01139c06081e21c646137c8b7ad03c0c84eff116"
+    "signature": ""
   },
   "compilationOptions": {},
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "POD_Async/0.7.2.0": {
+      "POD_Async/0.9.1.1": {
         "dependencies": {
           "Apache.NMS.ActiveMQ": "1.7.2",
           "NETStandard.Library": "2.0.3",
@@ -89,7 +89,7 @@
     }
   },
   "libraries": {
-    "POD_Async/0.7.2.0": {
+    "POD_Async/0.9.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

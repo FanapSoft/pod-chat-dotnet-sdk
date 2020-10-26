@@ -96,3 +96,11 @@ D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
 D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
 D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
 D:\Chat\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
+D:\pod-chat-dotnet-sdk\POD_Async\bin\Debug\netstandard2.0\POD_Async.deps.json
+D:\pod-chat-dotnet-sdk\POD_Async\bin\Debug\netstandard2.0\POD_Async.dll
+D:\pod-chat-dotnet-sdk\POD_Async\bin\Debug\netstandard2.0\POD_Async.pdb
+D:\pod-chat-dotnet-sdk\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfoInputs.cache
+D:\pod-chat-dotnet-sdk\POD_Async\obj\Debug\netstandard2.0\POD_Async.AssemblyInfo.cs
+D:\pod-chat-dotnet-sdk\POD_Async\obj\Debug\netstandard2.0\POD_Async.csproj.CoreCompileInputs.cache
+D:\pod-chat-dotnet-sdk\POD_Async\obj\Debug\netstandard2.0\POD_Async.dll
+D:\pod-chat-dotnet-sdk\POD_Async\obj\Debug\netstandard2.0\POD_Async.pdb
