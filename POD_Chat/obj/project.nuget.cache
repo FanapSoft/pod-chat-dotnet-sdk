@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V+ZuqIT2Mhjn0QjSbhKiFOGp3f44MTfksdZkRLq1+AqvEX8Db1dDRBB8enlxsAdBetKkEEELhJrE1XRfkyrmhw==",
+  "dgSpecHash": "yvP15R1KteFOslwDnXEjeJsAH4WICVa1zGAsQlWn5aihwfjvvXTzGw5Yn8EP9LyXvFmOwqRh6Aa6xHNo7z+sbg==",
   "success": true,
   "projectFilePath": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Arash\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Arash\\.nuget\\packages\\nlog\\4.7.1\\nlog.4.7.1.nupkg.sha512",
+    "C:\\Users\\Arash\\.nuget\\packages\\pod_async\\0.9.1.2\\pod_async.0.9.1.2.nupkg.sha512",
     "C:\\Users\\Arash\\.nuget\\packages\\restsharp\\106.11.3\\restsharp.106.11.3.nupkg.sha512",
     "C:\\Users\\Arash\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0-preview.3.20214.6\\system.componentmodel.annotations.5.0.0-preview.3.20214.6.nupkg.sha512",
     "C:\\Users\\Arash\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"

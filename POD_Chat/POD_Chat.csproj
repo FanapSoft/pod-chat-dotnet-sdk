@@ -4,11 +4,11 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Company>Fanap</Company>
     <Authors>Nadia Anvari</Authors>
-    <Version>0.9.1.1</Version>
+    <Version>0.9.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\POD_Async\POD_Async.csproj" />
+    <PackageReference Include="POD_Async" Version="0.9.1.2" />
   </ItemGroup>
 
   <ItemGroup>

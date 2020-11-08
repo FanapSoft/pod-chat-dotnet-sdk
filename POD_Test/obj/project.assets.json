@@ -628,6 +628,23 @@
           "build/netcoreapp2.1/NUnit3TestAdapter.props": {}
         }
       },
+      "POD_Async/0.9.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Apache.NMS.ActiveMQ": "1.7.2",
+          "NLog": "4.7.1",
+          "Newtonsoft.Json": "12.0.3",
+          "RestSharp": "106.11.3",
+          "System.ComponentModel.Annotations": "5.0.0-preview.3.20214.6",
+          "System.Drawing.Common": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/POD_Async.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/POD_Async.dll": {}
+        }
+      },
       "RestSharp/106.11.3": {
         "type": "package",
         "compile": {
@@ -1275,25 +1292,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "POD_Async/0.9.1.2": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Apache.NMS.ActiveMQ": "1.7.2",
-          "NLog": "4.7.1",
-          "Newtonsoft.Json": "12.0.3",
-          "RestSharp": "106.11.3",
-          "System.ComponentModel.Annotations": "5.0.0-preview.3.20214.6",
-          "System.Drawing.Common": "4.7.0"
-        },
-        "compile": {
-          "bin/placeholder/POD_Async.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/POD_Async.dll": {}
-        }
-      },
-      "POD_Chat/0.9.1.1": {
+      "POD_Chat/0.9.1.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2340,6 +2339,18 @@
         "build/netcoreapp2.1/nunit.engine.dll",
         "nunit3testadapter.3.16.1.nupkg.sha512",
         "nunit3testadapter.nuspec"
+      ]
+    },
+    "POD_Async/0.9.1.2": {
+      "sha512": "J9pt2CGoTd6XqVrM2RupMA3BKfKac8OOFac67+j8WSsvDSlXQMyl+CZ+JfcrJFmHt4W/ho+ieicqbq4IYgO4WQ==",
+      "type": "package",
+      "path": "pod_async/0.9.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/POD_Async.dll",
+        "pod_async.0.9.1.2.nupkg.sha512",
+        "pod_async.nuspec"
       ]
     },
     "RestSharp/106.11.3": {
@@ -4644,12 +4655,7 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "POD_Async/0.9.1.2": {
-      "type": "project",
-      "path": "../POD_Async/POD_Async.csproj",
-      "msbuildProject": "../POD_Async/POD_Async.csproj"
-    },
-    "POD_Chat/0.9.1.1": {
+    "POD_Chat/0.9.1.2": {
       "type": "project",
       "path": "../POD_Chat/POD_Chat.csproj",
       "msbuildProject": "../POD_Chat/POD_Chat.csproj"
@@ -4661,7 +4667,7 @@
       "Microsoft.NETCore.App >= 2.2.0",
       "NUnit >= 3.12.0",
       "NUnit3TestAdapter >= 3.16.1",
-      "POD_Chat >= 0.9.1.1"
+      "POD_Chat >= 0.9.1.2"
     ]
   },
   "packageFolders": {

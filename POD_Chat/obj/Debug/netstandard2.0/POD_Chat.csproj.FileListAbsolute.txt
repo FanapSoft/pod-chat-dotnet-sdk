@@ -130,12 +130,8 @@ D:\Chat\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
 D:\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
 D:\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
 D:\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
-D:\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Async.dll
-D:\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Async.pdb
-D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
-D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
-D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CopyComplete
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
+D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
