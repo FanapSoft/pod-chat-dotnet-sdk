@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj": {
-      "version": "0.9.1.1",
+      "version": "0.9.1.2",
       "restore": {
         "projectUniqueName": "D:\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj",
         "projectName": "POD_Async",

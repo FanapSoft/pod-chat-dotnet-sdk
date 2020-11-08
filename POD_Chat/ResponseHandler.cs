@@ -548,7 +548,8 @@ namespace POD_Chat
 
             if (messageVo?.Participant?.Id != null && messageVo?.Participant?.Id != chatConfig.UserId)
             {
-                ServiceLocator.AsyncConnector.Execute(messageVo, ChatMessageType.DELIVERY);
+                var deliveryMessage = SendDeliverSeenRequest.ConcreteBuilder.SetMessageId(messageVo.Id).Build();
+                ServiceLocator.AsyncConnector.Execute(deliveryMessage, ChatMessageType.DELIVERY);
                 PodLogger.Logger.Info("SEND_DELIVERY_MESSAGE");
             }
         }
@@ -582,7 +583,8 @@ namespace POD_Chat
 
             if (messageVo?.Participant?.Id != null && messageVo?.Participant?.Id != chatConfig.UserId)
             {
-                ServiceLocator.AsyncConnector.Execute(messageVo, ChatMessageType.DELIVERY);
+                var deliveryMessage = SendDeliverSeenRequest.ConcreteBuilder.SetMessageId(messageVo.Id).Build();
+                ServiceLocator.AsyncConnector.Execute(deliveryMessage, ChatMessageType.DELIVERY);
                 PodLogger.Logger.Info("SEND_DELIVERY_MESSAGE");
             }
         }
@@ -668,7 +670,7 @@ namespace POD_Chat
             PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
             var resultUnPinThread = JsonConvert.DeserializeObject<PinUnpinMessageModel>(chatMessage.Content);
             var wrappedResult = Wrap(resultUnPinThread, chatMessage);
-            UnPinMessage_MessageReceived?.Invoke(wrappedResult);         
+            UnPinMessage_MessageReceived?.Invoke(wrappedResult);
         }
 
         private void HandleAllUnreadMessageCount(ChatMessageVo chatMessage)

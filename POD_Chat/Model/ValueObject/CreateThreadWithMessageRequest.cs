@@ -24,7 +24,7 @@ namespace POD_Chat.Model.ValueObject
         {
             var threadRequestContent = CreateThreadInput.GetJsonContent();
             var jObject = JObject.Parse(threadRequestContent);
-            jObject.Add("message", MessageInput.ToJsonWithNotNullProperties());
+            jObject.Add("message", JToken.FromObject(MessageInput));
             return jObject.ToString();
         }
 

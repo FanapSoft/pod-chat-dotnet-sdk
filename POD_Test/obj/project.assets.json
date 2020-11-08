@@ -1275,7 +1275,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "POD_Async/0.9.1.1": {
+      "POD_Async/0.9.1.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1297,7 +1297,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "POD_Async": "0.9.1.1"
+          "POD_Async": "0.9.1.2"
         },
         "compile": {
           "bin/placeholder/POD_Chat.dll": {}
@@ -4644,7 +4644,7 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "POD_Async/0.9.1.1": {
+    "POD_Async/0.9.1.2": {
       "type": "project",
       "path": "../POD_Async/POD_Async.csproj",
       "msbuildProject": "../POD_Async/POD_Async.csproj"

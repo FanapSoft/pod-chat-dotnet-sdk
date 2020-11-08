@@ -173,6 +173,7 @@ namespace POD_Async.Base
 
             public Builder SetConsumersCount(int consumersCount)
             {
+                if (consumersCount > 20) consumersCount = 20;
                 this.consumersCount = consumersCount;
                 return this;
             }

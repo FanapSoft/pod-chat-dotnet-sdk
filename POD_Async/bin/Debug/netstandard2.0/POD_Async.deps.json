@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "POD_Async/0.9.1.1": {
+      "POD_Async/0.9.1.2": {
         "dependencies": {
           "Apache.NMS.ActiveMQ": "1.7.2",
           "NETStandard.Library": "2.0.3",
@@ -89,7 +89,7 @@
     }
   },
   "libraries": {
-    "POD_Async/0.9.1.1": {
+    "POD_Async/0.9.1.2": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

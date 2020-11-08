@@ -18,7 +18,6 @@ namespace POD_Async.Model
 
         public class Builder
         {
-            [IPAddress]
             [Required]
             private string ip;
 
