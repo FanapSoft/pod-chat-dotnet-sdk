@@ -11,6 +11,7 @@ namespace POD_Chat.Base.Enum
         /// <summary>
         /// only in P2P mode
         /// </summary>
-        TO_BE_USER_ID = 5
+        TO_BE_USER_ID = 5,
+        TO_BE_CORE_USER_ID = 6
     }
 }

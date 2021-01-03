@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "POD_Chat/0.9.1.2": {
+      "POD_Chat/0.9.1.3": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "POD_Async": "0.9.1.2"
@@ -100,7 +100,7 @@
     }
   },
   "libraries": {
-    "POD_Chat/0.9.1.2": {
+    "POD_Chat/0.9.1.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

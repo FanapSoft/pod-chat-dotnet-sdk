@@ -105,7 +105,7 @@ namespace POD_Chat.Model.ValueObject
                 var invitees = new List<InviteVo>();
                 for (int i = 0; i < coreUserIds.Length; i++)
                 {
-                    invitees.Add(InviteVo.ConcreteBuilder.SetId(coreUserIds[i].ToString()).SetIdType(InviteType.TO_BE_USER_ID).Build());
+                    invitees.Add(InviteVo.ConcreteBuilder.SetId(coreUserIds[i].ToString()).SetIdType(InviteType.TO_BE_CORE_USER_ID).Build());
                 }
 
                 this.coreUserIds = invitees;
