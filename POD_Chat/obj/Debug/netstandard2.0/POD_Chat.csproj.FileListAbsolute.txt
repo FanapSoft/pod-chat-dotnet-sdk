@@ -135,3 +135,4 @@ D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.c
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
