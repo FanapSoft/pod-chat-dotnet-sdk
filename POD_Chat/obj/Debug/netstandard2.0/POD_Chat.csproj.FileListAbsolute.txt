@@ -136,3 +136,11 @@ D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
 D:\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csprojAssemblyReference.cache
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.deps.json
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.dll
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\bin\Debug\netstandard2.0\POD_Chat.pdb
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfoInputs.cache
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.AssemblyInfo.cs
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.csproj.CoreCompileInputs.cache
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.dll
+E:\Fanap\pod-chat-dotnet-sdk\POD_Chat\obj\Debug\netstandard2.0\POD_Chat.pdb

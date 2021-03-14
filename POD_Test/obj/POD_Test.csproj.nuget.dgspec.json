@@ -1,33 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj": {}
+    "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj": {}
   },
   "projects": {
-    "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj": {
-      "version": "0.9.1.3",
+    "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj": {
+      "version": "0.9.1.4",
       "restore": {
-        "projectUniqueName": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
+        "projectUniqueName": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
         "projectName": "POD_Chat",
-        "projectPath": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
-        "packagesPath": "C:\\Users\\Arash\\.nuget\\packages\\",
-        "outputPath": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\obj\\",
+        "projectPath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
+        "packagesPath": "C:\\Users\\nadia\\.nuget\\packages\\",
+        "outputPath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Chat\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nadia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\POD_Async": {},
-          "D:\\POD_Async\\POD_Async\\bin\\Debug\\": {},
-          "D:\\POD_Async\\POD_Chat\\bin\\Debug": {},
+          "http://nuget.geeksms.uat.co/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,37 +66,34 @@
         }
       }
     },
-    "D:\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj": {
+    "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj": {
       "version": "0.7.2",
       "restore": {
-        "projectUniqueName": "D:\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj",
+        "projectUniqueName": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj",
         "projectName": "POD_Test",
-        "projectPath": "D:\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj",
-        "packagesPath": "C:\\Users\\Arash\\.nuget\\packages\\",
-        "outputPath": "D:\\pod-chat-dotnet-sdk\\POD_Test\\obj\\",
+        "projectPath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Test\\POD_Test.csproj",
+        "packagesPath": "C:\\Users\\nadia\\.nuget\\packages\\",
+        "outputPath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nadia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\POD_Async": {},
-          "D:\\POD_Async\\POD_Async\\bin\\Debug\\": {},
-          "D:\\POD_Async\\POD_Chat\\bin\\Debug": {},
+          "http://nuget.geeksms.uat.co/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj": {
-                "projectPath": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj"
+              "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj": {
+                "projectPath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj"
               }
             }
           }

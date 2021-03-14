@@ -1,0 +1,5 @@
+E:\Fanap\pod-chat-dotnet-sdk\POD_Demo\obj\Debug\net461\POD_Demo.csprojAssemblyReference.cache
+E:\Fanap\pod-chat-dotnet-sdk\POD_Demo\obj\Debug\net461\POD_Demo.exe.config
+E:\Fanap\pod-chat-dotnet-sdk\POD_Demo\obj\Debug\net461\POD_Demo.AssemblyInfoInputs.cache
+E:\Fanap\pod-chat-dotnet-sdk\POD_Demo\obj\Debug\net461\POD_Demo.AssemblyInfo.cs
+E:\Fanap\pod-chat-dotnet-sdk\POD_Demo\obj\Debug\net461\POD_Demo.csproj.CoreCompileInputs.cache

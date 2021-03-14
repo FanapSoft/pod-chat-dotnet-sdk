@@ -1,19 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "on89p9udSTCp4AqR2kn6epkFhDDE6RUMnqNUMrh4eS3A79fLE1OD6xTa0B+c74jJIf3WCJUpQ+Ah616o2psSDA==",
+  "dgSpecHash": "kn9mZGIwMALUc/Gs4pFeyHOE/OmMfm/jRc/pK+3GUe42dnkoIGg6NHI3DoYrCHtmZJJV2PnSO3r2/r2YzEqWbw==",
   "success": true,
-  "projectFilePath": "D:\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
+  "projectFilePath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Chat\\POD_Chat.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Arash\\.nuget\\packages\\apache.nms\\1.7.1\\apache.nms.1.7.1.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\apache.nms.activemq\\1.7.2\\apache.nms.activemq.1.7.2.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\nadia\\.nuget\\packages\\apache.nms\\1.7.1\\apache.nms.1.7.1.nupkg.sha512",
+    "C:\\Users\\nadia\\.nuget\\packages\\apache.nms.activemq\\1.7.2\\apache.nms.activemq.1.7.2.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\nlog\\4.7.1\\nlog.4.7.1.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\pod_async\\0.9.1.2\\pod_async.0.9.1.2.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\restsharp\\106.11.3\\restsharp.106.11.3.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0-preview.3.20214.6\\system.componentmodel.annotations.5.0.0-preview.3.20214.6.nupkg.sha512",
-    "C:\\Users\\Arash\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+    "C:\\Users\\nadia\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\nadia\\.nuget\\packages\\nlog\\4.7.1\\nlog.4.7.1.nupkg.sha512",
+    "C:\\Users\\nadia\\.nuget\\packages\\pod_async\\0.9.1.2\\pod_async.0.9.1.2.nupkg.sha512",
+    "C:\\Users\\nadia\\.nuget\\packages\\restsharp\\106.11.3\\restsharp.106.11.3.nupkg.sha512",
+    "C:\\Users\\nadia\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0-preview.3.20214.6\\system.componentmodel.annotations.5.0.0-preview.3.20214.6.nupkg.sha512",
+    "C:\\Users\\nadia\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
   ],
   "logs": [
     {

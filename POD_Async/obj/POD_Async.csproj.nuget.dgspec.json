@@ -1,33 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "D:\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj": {}
+    "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj": {}
   },
   "projects": {
-    "D:\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj": {
+    "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj": {
       "version": "0.9.1.2",
       "restore": {
-        "projectUniqueName": "D:\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj",
+        "projectUniqueName": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj",
         "projectName": "POD_Async",
-        "projectPath": "D:\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj",
-        "packagesPath": "C:\\Users\\Arash\\.nuget\\packages\\",
-        "outputPath": "D:\\pod-chat-dotnet-sdk\\POD_Async\\obj\\",
+        "projectPath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Async\\POD_Async.csproj",
+        "packagesPath": "C:\\Users\\nadia\\.nuget\\packages\\",
+        "outputPath": "E:\\Fanap\\pod-chat-dotnet-sdk\\POD_Async\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Arash\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nadia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\POD_Async": {},
-          "D:\\POD_Async\\POD_Async\\bin\\Debug\\": {},
-          "D:\\POD_Async\\POD_Chat\\bin\\Debug": {},
+          "http://nuget.geeksms.uat.co/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
