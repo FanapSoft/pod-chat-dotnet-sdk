@@ -20,6 +20,7 @@ namespace POD_Demo
     public class ChatMethodInvoke
     {
         private Dictionary<string, string> uniqueIds;
+        private Dictionary<string, List<string>> multipleUniqueIds;
         public ChatMethodInvoke()
         {
             try
@@ -60,7 +61,7 @@ namespace POD_Demo
 
                 uniqueIds = new Dictionary<string, string>
                             {
-                                {"GetThreads",string.Empty },
+                                {"GetThreads", string.Empty },
                                 {"CreateThread",string.Empty },
                                 {"CreateThreadWithMessage",string.Empty },
                                 {"UpdateThreadInfo",string.Empty },
@@ -70,10 +71,8 @@ namespace POD_Demo
                                 {"RemoveParticipant",string.Empty },
                                 {"GetThreadParticipants",string.Empty },
                                 {"DeleteMessage",string.Empty },
-                                {"DeleteMultipleMessage",string.Empty },
                                 {"GetHistory",string.Empty },
                                 {"ReplyTextMessage",string.Empty },
-                                {"ForwardMessage",string.Empty },
                                 {"GetContacts",string.Empty },
                                 {"JoinPublicThread",string.Empty },
                                 {"IsPublicThreadNameAvailable",string.Empty },
@@ -102,6 +101,12 @@ namespace POD_Demo
                                 {"GetCurrentUserRoles",string.Empty },
                                 {"GetUnreadMessageCount",string.Empty }
                             };
+
+                multipleUniqueIds = new Dictionary<string, List<string>>
+                {
+                    { "DeleteMultipleMessage",new List<string> {string.Empty} } ,
+                    { "ForwardMessage",new List<string> {string.Empty} }
+                };
 
                 #endregion Configuration
 
@@ -180,9 +185,9 @@ namespace POD_Demo
             ServiceLocator.ResponseHandler.UpdateThreadInfo_MessageReceived += OnUpdateThreadInfo;
             ServiceLocator.ResponseHandler.Send_MessageReceived += OnSendMessage;
             ServiceLocator.ResponseHandler.Forward_MessageReceived += OnForwardMessage;
-            ServiceLocator.ResponseHandler.AddParticipant_MessageReceived += OnAddParticipant;
+            ServiceLocator.ResponseHandler.AddParticipant_MessageReceived += OnAddParticipants;
             ServiceLocator.ResponseHandler.RemoveParticipants_MessageReceived += OnRemoveParticipant;
-            ServiceLocator.ResponseHandler.GetParticipants_MessageReceived += OnRemoveParticipant;
+            ServiceLocator.ResponseHandler.GetParticipants_MessageReceived += OnGetThreadParticipant;
             ServiceLocator.ResponseHandler.Seen_MessageReceived += OnSeen;
             ServiceLocator.ResponseHandler.Sent_MessageReceived += OnSent;
             ServiceLocator.ResponseHandler.Delivery_MessageReceived += OnDelivery;
@@ -206,7 +211,7 @@ namespace POD_Demo
             ServiceLocator.ResponseHandler.RemoveRoleFromUser_MessageReceived += OnRemoveRoleFromUser;
             ServiceLocator.ResponseHandler.UpdateProfile_MessageReceived += OnUpdateProfile;
             ServiceLocator.ResponseHandler.GetUserRoles_MessageReceived += OnGetCurrentUserRoles;
-            ServiceLocator.ResponseHandler.Delete_MessageReceived += OnDelete;
+            ServiceLocator.ResponseHandler.Delete_MessageReceived += OnDeleteMessage;
             ServiceLocator.ResponseHandler.ChatError_MessageReceived += OnChatError;
         }
 
@@ -705,7 +710,7 @@ namespace POD_Demo
                     //.SetTypeCode("default")
                     .Build();
 
-                var uniques = ServiceLocator.ChatService.DeleteMultipleMessages(deleteMultipleMessagesRequest);
+                multipleUniqueIds["DeleteMultipleMessage"].AddRange(ServiceLocator.ChatService.DeleteMultipleMessages(deleteMultipleMessagesRequest).ToList());
             }
             catch (PodException podException)
             {
@@ -731,7 +736,7 @@ namespace POD_Demo
                     //.SetTypeCode("")
                     .Build();
 
-                var uniques = ServiceLocator.ChatService.ForwardMessage(forwardMessageRequest);
+                multipleUniqueIds["ForwardMessage"].AddRange(ServiceLocator.ChatService.ForwardMessage(forwardMessageRequest));
             }
             catch (PodException podException)
             {
@@ -1567,265 +1572,281 @@ namespace POD_Demo
 
         public void OnGetThreads(ChatResponseSrv<GetThreadsModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["GetThreads"])
             {
-
+                // Add your logic
             }
         }
 
         public void OnCreateThread(ChatResponseSrv<Conversation> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(createThreaduniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["CreateThread"])
             {
+                // Add your logic
+            }
 
+            if (result.UniqueId == uniqueIds["CreateThreadWithMessage"])
+            {
+                // Add your logic
+            }
+            
+            if (result.UniqueId == uniqueIds["CreateThreadWithFileMessage"])
+            {
+                // Add your logic
             }
         }
 
         public void OnUpdateThreadInfo(ChatResponseSrv<Conversation> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["UpdateThreadInfo"])
             {
-
+                // Add your logic
             }
         }
 
         public void OnSendMessage(ChatResponseSrv<SendMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(sendMessageuniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["SendTextMessage"])
             {
-
+                // Add your logic
             }
         }
 
         public void OnForwardMessage(ChatResponseSrv<SendMessageModel> result)
         {
-            if (forwarduniqueIds["GetThreads"].Contains(result.uniqueIds["GetThreads"]))
+            if (multipleUniqueIds["ForwardMessage"].Any(_ => _ == result.UniqueId))
             {
-
-            }
-            var ff = forwarduniqueIds["GetThreads"].FirstOrDefault(s => s == result.uniqueIds["GetThreads"]);
-            if (forwarduniqueIds["GetThreads"].FirstOrDefault(s => s == result.uniqueIds["GetThreads"]) != null)
-            {
-
+                // Add your logic
             }
         }
 
-        public void OnAddParticipant(ChatResponseSrv<AddParticipantModel> result)
+        public void OnGetThreadParticipant(ChatResponseSrv<GetThreadParticipantsModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["GetThreadParticipants"])
             {
-
+                // Add your logic
+            }
+        }
+        public void OnAddParticipants(ChatResponseSrv<AddParticipantModel> result)
+        {
+            if (result.UniqueId == uniqueIds["AddParticipants"])
+            {
+                // Add your logic
             }
         }
         public void OnRemoveParticipant(ChatResponseSrv<GetThreadParticipantsModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["RemoveParticipant"])
             {
-
+                // Add your logic
             }
         }
 
         public void OnSeen(ChatResponseSrv<SendMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["SendTextMessage"])
             {
-
+                // Add your logic
             }
         }
 
         public void OnSent(ChatResponseSrv<SendMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(sendMessageuniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["SendTextMessage"])
             {
-                //105287
-                //integ : 97290
+                // Add your logic
             }
         }
         public void OnDelivery(ChatResponseSrv<SendMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
-            {
-
-            }
+            // Add your logic
         }
 
         public void OnGetHistory(ChatResponseSrv<GetHistoryModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["GetHistory"])
             {
-
+                // Add your logic
             }
         }
 
-        public void OnDelete(ChatResponseSrv<DeleteMessageModel> result)
+        public void OnDeleteMessage(ChatResponseSrv<DeleteMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["DeleteMessage"])
             {
-
+                // Add your logic
             }
-            var ff = multipleDeleteuniqueIds["GetThreads"].FirstOrDefault(s => s == result.uniqueIds["GetThreads"]);
-            if (multipleDeleteuniqueIds["GetThreads"].FirstOrDefault(s => s == result.uniqueIds["GetThreads"]) != null)
-            {
 
+            if (multipleUniqueIds["DeleteMultipleMessage"].Any(_ => _ == result.UniqueId))
+            {
+                // Add your logic
             }
         }
         public void OnChatError(ChatResponseSrv<AsyncErrorMessage> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (uniqueIds.Any(_ => _.Value == result.UniqueId))
             {
-
+                //Add your logic
             }
         }
 
         private void OnGetContacts(ChatResponseSrv<GetContactsResponse> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["GetContacts"])
             {
-                //contactid =8558 , userid=15508  , username= "masoudmanson" , 8686,15505,fatemeh
+                // Add your logic
             }
         }
 
         private void OnJoinPublicThread(ChatResponseSrv<Conversation> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["JoinPublicThread"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnIsPublicThreadNameAvailable(ChatResponseSrv<IsAvailableNameModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["IsPublicThreadNameAvailable"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnLeaveThread(ChatResponseSrv<LeaveThreadModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["LeaveThread"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnEditMessage(ChatResponseSrv<SendMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["EditMessage"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnMuteThread(ChatResponseSrv<MuteUnmuteThreadModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["MuteThread"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnUnMuteThread(ChatResponseSrv<MuteUnmuteThreadModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["UnMuteThread"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnBlock(ChatResponseSrv<BlockUnblockUserResponse> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["Block"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnUnBlock(ChatResponseSrv<BlockUnblockUserResponse> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["UnBlock"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnBlockList(ChatResponseSrv<GetBlockedUserListResponse> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["GetBlockList"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnClearHistory(ChatResponseSrv<ClearHistoryModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["ClearHistory"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnPinThread(ChatResponseSrv<PinUnpinThreadModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["PinThread"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnUnPinThread(ChatResponseSrv<PinUnpinThreadModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["UnPinThread"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnPinMessage(ChatResponseSrv<PinUnpinMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["PinMessage"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnUnPinMessage(ChatResponseSrv<PinUnpinMessageModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["UnPinMessage"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnSetRoleToUser(ChatResponseSrv<UserRolesModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["SetAdmin"])
             {
-
+                // Add your logic
+            }
+            else if (result.UniqueId == uniqueIds["RemoveAuditor"])
+            {
+                // Add your logic
             }
         }
 
         private void OnRemoveRoleFromUser(ChatResponseSrv<UserRolesModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["RemoveAdmin"])
             {
-
+                // Add your logic
+            }
+            else if (result.UniqueId == uniqueIds["RemoveAuditor"])
+            {
+                // Add your logic
             }
         }
 
         private void OnUpdateProfile(ChatResponseSrv<Profile> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["UpdateProfile"])
             {
-
+                // Add your logic
             }
         }
 
         private void OnGetCurrentUserRoles(ChatResponseSrv<GetCurrentUserRolesModel> result)
         {
-            if (result.uniqueIds["GetThreads"].Equals(uniqueIds["GetThreads"]))
+            if (result.UniqueId == uniqueIds["GetCurrentUserRoles"])
             {
-
+                // Add your logic
             }
         }
 
