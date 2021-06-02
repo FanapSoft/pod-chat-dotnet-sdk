@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using POD_Async.Base;
 using POD_Async.Core;
 using POD_Async.Core.ResultModel;
@@ -13,6 +7,11 @@ using POD_Chat.Base.Enum;
 using POD_Chat.Model.ServiceOutput;
 using POD_Chat.Model.ValueObject;
 using RestSharp;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace POD_Chat
 {
@@ -135,7 +134,7 @@ namespace POD_Chat
 
         public string CreateThread(CreateThreadRequest createThreadRequest)
         {
-            var uniqueId = ServiceLocator.AsyncConnector.Execute(createThreadRequest, ChatMessageType.INVITATION);
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(createThreadRequest, ChatMessageType.CREATE_THREAD);
             if (createThreadRequest.UploadInput != null)
             {
                 long threadId = 0;
@@ -186,7 +185,7 @@ namespace POD_Chat
 
         public string[] CreateThreadWithMessage(CreateThreadWithMessageRequest createThreadWithMessageRequest)
         {
-            var uniqueId = ServiceLocator.AsyncConnector.ExecuteCreateThreadWithMessage(createThreadWithMessageRequest, ChatMessageType.INVITATION);
+            var uniqueId = ServiceLocator.AsyncConnector.ExecuteCreateThreadWithMessage(createThreadWithMessageRequest, ChatMessageType.CREATE_THREAD);
             return uniqueId;
         }
 
@@ -770,5 +769,91 @@ namespace POD_Chat
         }
 
         #endregion Bot
+
+        #region Call_Management
+        public string RequestCall(CallRequest callRequest) {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(callRequest, ChatMessageType.CALL_REQUEST);
+            return uniqueId;
+        }
+
+        public string RequestGroupCall(CallRequest callRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(callRequest, ChatMessageType.GROUP_CALL_REQUEST);
+            return uniqueId;
+        }
+
+        public string EndCallRequest(EndCallRequest endCallRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(endCallRequest, ChatMessageType.END_CALL_REQUEST,subjectId:endCallRequest.CallId);
+            return uniqueId;
+        }
+
+        public string AddCallParticipant(AddParticipantsRequest participant)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(participant, ChatMessageType.ADD_CALL_PARTICIPANT,subjectId:participant.ThreadId);
+            return uniqueId;
+        }
+
+        public string RemoveCallParticipant(RemoveCallParticipantsRequest participant)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(participant, ChatMessageType.REMOVE_CALL_PARTICIPANT, subjectId: participant.ThreadId);
+            return uniqueId;
+        }
+
+        public string TerminateCall(TerminateCallRequest terminateCallRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(null, ChatMessageType.TERMINATE_CALL , subjectId:terminateCallRequest.CallId);
+            return uniqueId;
+        }
+
+        public string TurnOnVideoCall(TurnOnVideoCallRequest turnOnVideoCallRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(null, ChatMessageType.TURN_ON_VIDEO_CALL,subjectId:turnOnVideoCallRequest.CallId);
+            return uniqueId;
+        }
+
+        public string TurnOffVideoCall(TurnOffVideoCallRequest turnOffVideoCallRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(null, ChatMessageType.TURN_OFF_VIDEO_CALL,subjectId:turnOffVideoCallRequest.CallId);
+            return uniqueId;
+        }
+
+        public string MuteCall(MuteUnMuteCallParticipantsRequest muteCallParticipantsRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(muteCallParticipantsRequest, ChatMessageType.MUTE_CALL_PARTICIPANT, subjectId: muteCallParticipantsRequest.CallId);
+            return uniqueId;
+        }
+
+        public string UNMuteCall(MuteUnMuteCallParticipantsRequest muteCallParticipantsRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(muteCallParticipantsRequest, ChatMessageType.UNMUTE_CALL_PARTICIPANT, subjectId: muteCallParticipantsRequest.CallId);
+            return uniqueId;
+        }
+
+        public string GetActiveCallParticipants(long callId)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(null, ChatMessageType.ACTIVE_CALL_PARTICIPANTS, subjectId: callId);
+            return uniqueId;
+        }
+
+        public string StartRecording(StartRecordingRequest startRecordingRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(startRecordingRequest, ChatMessageType.START_RECORDING, subjectId: startRecordingRequest.CallId);
+            return uniqueId;
+        }
+
+        public string StopRecording(StopRecordingRequest stopRecordingRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(stopRecordingRequest, ChatMessageType.STOP_RECORDING, subjectId: stopRecordingRequest.CallId);
+            return uniqueId;
+        }
+
+        public string GetCallsList(GetCallHistoryRequest callHistoryRequest)
+        {
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(callHistoryRequest, ChatMessageType.GET_CALLS);
+            return uniqueId;
+        }
+        #endregion Call_Management
+
     }
 }

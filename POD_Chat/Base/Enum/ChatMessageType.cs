@@ -3,7 +3,7 @@ namespace POD_Chat.Base.Enum
 {
     public enum ChatMessageType
     {
-        INVITATION = 1,
+        CREATE_THREAD = 1,
         MESSAGE = 2,
         SENT = 3,
         DELIVERY = 4,
@@ -55,6 +55,30 @@ namespace POD_Chat.Base.Enum
         DEFINE_BOT_COMMAND = 63,
         START_BOT = 64,
         STOP_BOT = 65,
-        ERROR = 999
+        ERROR = 999,
+
+        CALL_REQUEST = 70,
+        //Type 71 never fire from server to client only client send 71 to server
+        ACCEPT_CALL = 71,
+        REJECT_CALL = 72,
+        DELIVERED_CALL_REQUEST = 73,
+        START_CALL = 74,
+        END_CALL_REQUEST = 75,
+        END_CALL = 76,
+        GET_CALLS = 77,
+        GROUP_CALL_REQUEST = 91,
+        LEAVE_CALL = 92,
+        ADD_CALL_PARTICIPANT = 93,
+        CALL_PARTICIPANT_JOINED = 94,
+        REMOVE_CALL_PARTICIPANT = 95,
+        TERMINATE_CALL = 96,
+        MUTE_CALL_PARTICIPANT = 97,
+        UNMUTE_CALL_PARTICIPANT = 98,
+        ACTIVE_CALL_PARTICIPANTS =  110,
+        CALL_SESSION_CREATED = 111,
+        TURN_ON_VIDEO_CALL = 113,
+        TURN_OFF_VIDEO_CALL = 114,
+        START_RECORDING = 121,
+        STOP_RECORDING = 122,
     }
 }
