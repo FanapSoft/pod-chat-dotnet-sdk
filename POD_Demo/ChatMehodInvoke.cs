@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using NLog;
 using POD_Async.Base;
 using POD_Async.Core;
 using POD_Async.Core.ResultModel;
@@ -13,7 +9,11 @@ using POD_Chat.Base;
 using POD_Chat.Base.Enum;
 using POD_Chat.Model.ServiceOutput;
 using POD_Chat.Model.ValueObject;
-using NLog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Timers;
 
 namespace POD_Demo
 {
@@ -21,6 +21,7 @@ namespace POD_Demo
     {
         private Dictionary<string, string> uniqueIds;
         private Dictionary<string, List<string>> multipleUniqueIds;
+        private GetUserInfoResponse userInfo = null;
         public ChatMethodInvoke()
         {
             try
@@ -40,9 +41,9 @@ namespace POD_Demo
                 //Initial necessary config
                 var config = AsyncConfig.ConcreteBuilder.SetQueueUrl(new List<QueueUrl>
                     {
-                        QueueUrl.ConcreteBuilder.SetIp("queueHost").SetPort(0).Build()
+                       QueueUrl.ConcreteBuilder.SetIp("queueHost").SetPort(0).Build()
                     })
-                    .SetQueueUsername("queueUsername")
+                            .SetQueueUsername("queueUsername")
                     .SetQueuePassword("queuePassword")
                     .SetQueueReceive("queueReceive")
                     .SetQueueSend("queueSend")
@@ -99,7 +100,19 @@ namespace POD_Demo
                                 {"RemoveAuditor",string.Empty },
                                 {"UpdateProfile",string.Empty },
                                 {"GetCurrentUserRoles",string.Empty },
-                                {"GetUnreadMessageCount",string.Empty }
+                                {"GetUnreadMessageCount",string.Empty },
+                                {"StartCall",string.Empty },
+                                {"EndCall" , string.Empty},
+                                {"TerminateCall",string.Empty },
+                                {"TurnOnVideoCall",string.Empty },
+                                {"TurnOffVideoCall",string.Empty },
+                                {"MuteCallPaticipant",string.Empty },
+                                {"UNMuteCallPaticipant",string.Empty },
+                                {"AddParticipantCall",string.Empty },
+                                {"RemoveParticipantCall",string.Empty },
+                                {"LeaveCall",string.Empty },
+                                {"StartRecording",string.Empty },
+                                { "ActiveCallParticipants",string.Empty}
                             };
 
                 multipleUniqueIds = new Dictionary<string, List<string>>
@@ -161,6 +174,16 @@ namespace POD_Demo
                 //GetUnreadMessageCount();
                 //DownloadImage();
                 //DownloadFile();
+                StartCall();
+                //StartGroupCall();
+                //GetCallsList();
+                //AddParticipantCall();
+                //RemoveParticipantCall();
+                //AcceptCall();
+                //RejectCall();
+                //TerminateCall();
+                //TurnOnVideoCall();
+                //TurnOffVideoCall();
 
                 #endregion Method-Calls
             }
@@ -213,6 +236,23 @@ namespace POD_Demo
             ServiceLocator.ResponseHandler.GetUserRoles_MessageReceived += OnGetCurrentUserRoles;
             ServiceLocator.ResponseHandler.Delete_MessageReceived += OnDeleteMessage;
             ServiceLocator.ResponseHandler.ChatError_MessageReceived += OnChatError;
+
+            ServiceLocator.ResponseHandler.CallRequest_MessageReceived += OnCallRequest;
+            ServiceLocator.ResponseHandler.RejectCall_MessageReceived += OnRejectCall;
+            ServiceLocator.ResponseHandler.DeliverCall_MessageRecevied += OnDeliverCall;
+            ServiceLocator.ResponseHandler.StartCall_MessageRecevied += OnStartCall;
+            ServiceLocator.ResponseHandler.RemoveCallParticipant_MessageReceived += OnRemoveParticipantCall;
+            ServiceLocator.ResponseHandler.MuteCallParticipant_MessageReceived += OnMuteParticipantCall;
+            ServiceLocator.ResponseHandler.UNMuteCallParticipant_MessageReceived += OnUNMuteParticipantCall;
+            ServiceLocator.ResponseHandler.TurnOnVideoCall_MessageReceived += OnTurnOnVideoCall;
+            ServiceLocator.ResponseHandler.TurnOffVideoCall_MessageReceived += OnTurnOffVideoCall;
+            ServiceLocator.ResponseHandler.LeaveCall_MessageReceived += OnLeaveCall;
+            ServiceLocator.ResponseHandler.StartRecording_MessageReceived += OnStartRecording;
+            ServiceLocator.ResponseHandler.EndCall_MessageReceived += OnCallEnded;
+            ServiceLocator.ResponseHandler.CallJoinedParticipants_MessageReceived += OnJoinedCallParticipants;
+            ServiceLocator.ResponseHandler.ActiveCallParticipants_MessageReceived += OnActiveCallParticipants;
+            ServiceLocator.ResponseHandler.GetCallsList_MessageReceived += OnGetCallsList;            
+            ServiceLocator.ResponseHandler.UserInfo_MessageReceived += OnGetUserInfo;
         }
 
         #endregion Event-Subscibers
@@ -604,7 +644,7 @@ namespace POD_Demo
             {
                 var addParticipantsRequest = AddParticipantsRequest.ConcreteBuilder
                     .SetThreadId(0)
-                    .SetContactIds(new long[] { 0 })
+                     .SetContactIds(new long[] { 0 })
                     //.SetUserNames(new []{ "" })
                     //.SetCoreUserIds(new long[]{ 0 })
                     //.SetTypeCode("")
@@ -1566,6 +1606,308 @@ namespace POD_Demo
             }
         }
 
+        public void StartCall()
+        {
+            try
+            {
+                var clientDTo = SendClientDTO.ConcreteBuilder
+                    .SetMute(true)
+                    .SetVideo(false)
+                    .Build();
+                var callRequest = CallRequest.ConcreteBuilder(clientDTo)
+                    .SetThreadId(8911)
+                    .SetCallType(CallType.VOICE_CALL)
+                    .Build();
+                uniqueIds["StartCall"] = ServiceLocator.ChatService.RequestCall(callRequest);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void StartGroupCall()
+        {
+            try
+            {
+                var clientDTo = SendClientDTO.ConcreteBuilder
+                    .SetMute(false)
+                    .SetVideo(false)
+                    .Build();
+                var callRequest = CallRequest.ConcreteBuilder(clientDTo)
+                    .SetThreadId(8913)
+                    .SetCallType(CallType.VOICE_CALL)
+                    .Build();
+                uniqueIds["StartCall"] = ServiceLocator.ChatService.RequestGroupCall(callRequest);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void GetCallsList()
+        {
+            try
+            {
+                var callHistory = GetCallHistoryRequest.ConcreteBuilder
+                    .SetCount(200)
+                    .SetOffset(0)
+                    .Build();
+                uniqueIds["StartCall"] = ServiceLocator.ChatService.GetCallsList(callHistory);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void AddParticipantCall(long callId)
+        {
+            try
+            {
+                var addParticipantsRequest = AddParticipantsRequest.ConcreteBuilder
+                    .SetThreadId(callId)
+                    .SetCoreUserIds(new long[] { 43595 }).Build(); 
+                uniqueIds["AddParticipantCall"] = ServiceLocator.ChatService.AddCallParticipant(addParticipantsRequest);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void RemoveParticipantCall(long callId)
+        {
+            try
+            {
+                var removeParticipantsRequest = RemoveCallParticipantsRequest.ConcreteBuilder
+                    .SetThreadId(callId)
+                    //.SetCoreUserIds(new long[] { 43590 })//coreUser id of masoud
+                    .SetUserIds(new long[] { 18482 })//userid Of masoud
+                    .Build();
+                uniqueIds["RemoveParticipantCall"] = ServiceLocator.ChatService.RemoveCallParticipant(removeParticipantsRequest);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void EndCall(long callId)
+        {
+            try
+            {
+                var endCallRequest = EndCallRequest.ConcreteBuilder(callId).Build();
+                uniqueIds["EndCall"] = ServiceLocator.ChatService.EndCallRequest(endCallRequest);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void TerminateCall(long callId)
+        {
+            try
+            {
+                var terminateCall = TerminateCallRequest.ConcreteBuilder.SetCallId(callId).Build();
+                uniqueIds["TerminateCall"] = ServiceLocator.ChatService.TerminateCall(terminateCall);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void TurnOnVideoCall(long? callId)
+        {
+            try
+            {
+                var turnOnVideoCallRequest = new TurnOnVideoCallRequest(callId: callId.Value);
+                uniqueIds["TurnOnVideoCall"] = ServiceLocator.ChatService.TurnOnVideoCall(turnOnVideoCallRequest);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void TurnOffVideoCall(long? callId)
+        {
+            try
+            {
+                var turnOffVideoCallRequest = new TurnOffVideoCallRequest(callId: callId.Value);
+                uniqueIds["TurnOffVideoCall"] = ServiceLocator.ChatService.TurnOffVideoCall(turnOffVideoCallRequest);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void MuteCallPaticipant(long? callId)
+        {
+            try
+            {
+                //var userIds = new long[] { 18476 }; //masoud userId
+                var userIds = new long[] { userInfo.User.Id }; //pporya pahlevani userId
+                uniqueIds["MuteCallPaticipant"] = ServiceLocator.ChatService.MuteCall(new MuteUnMuteCallParticipantsRequest(callId.Value, userIds));
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void UNMuteCallPaticipant(long? callId)
+        {
+            try
+            {
+                var userIds = new long[] { userInfo.User.Id };
+                uniqueIds["UNMuteCallPaticipant"] = ServiceLocator.ChatService.UNMuteCall(new MuteUnMuteCallParticipantsRequest(callId.Value, userIds));
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void GetActiveCallParticipants(long? callId) {
+            try
+            {
+                var userIds = new long[] { userInfo.User.Id };
+                uniqueIds["ActiveCallParticipants"] = ServiceLocator.ChatService.GetActiveCallParticipants(callId.Value);
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void StartRecording(long? callId)
+        {
+            try
+            {
+                uniqueIds["StartRecording"] = ServiceLocator.ChatService.StartRecording(new StartRecordingRequest(callId.Value));
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
+        public void StopRecording(long? callId)
+        {
+            try
+            {
+                var userIds = new long[] { 1, 2 };
+                uniqueIds["UNMuteCallPaticipant"] = ServiceLocator.ChatService.StopRecording(new StopRecordingRequest(callId.Value, userIds));
+            }
+            catch (PodException podException)
+            {
+                Console.WriteLine(
+                    $"-- {podException.Code}-an error has occured : {Environment.NewLine}{podException.Message}");
+                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+                throw;
+            }
+        }
+
         #endregion Request
 
         #region Response
@@ -1589,7 +1931,7 @@ namespace POD_Demo
             {
                 // Add your logic
             }
-            
+
             if (result.UniqueId == uniqueIds["CreateThreadWithFileMessage"])
             {
                 // Add your logic
@@ -1848,6 +2190,131 @@ namespace POD_Demo
             {
                 // Add your logic
             }
+        }
+
+        private void OnCallRequest(ChatResponseSrv<CreateCallVO> result)
+        {
+            if (result.UniqueId == uniqueIds["StartCall"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnRejectCall(ChatResponseSrv<CallVO> result)
+        {
+            if (result.UniqueId == uniqueIds["LeaveCall"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnDeliverCall(ChatResponseSrv<DeliverCallRequestVO> result)
+        {
+
+        }
+
+        private void OnStartCall(ChatResponseSrv<StartCallVO> result)
+        {
+            //simulate delay
+            Timer timer = new Timer();
+            timer.Elapsed += delegate {
+                var subjectId = result.SubjectId.Value;
+                //StartRecording(subjectId);
+                //StopRecording(subjectId);
+
+                //TurnOnVideoCall(subjectId);
+                //TurnOffVideoCall(subjectId);
+                //UNMuteCallPaticipant(subjectId);
+                //AddParticipantCall(subjectId);
+                //RemoveParticipantCall(subjectId);
+                //TerminateCall(subjectId);//callId
+                //EndCall(subjectId);
+                //MuteCallPaticipant(subjectId);
+                //GetActiveCallParticipants(subjectId);
+            }; 
+            timer.Interval = 10000;
+            timer.AutoReset = false;
+            timer.Enabled = true;
+        }
+
+        private void OnRemoveParticipantCall(ChatResponseSrv<List<CallParticipantVO>> result)
+        {
+            if (result.UniqueId == uniqueIds["RemoveParticipantCall"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnMuteParticipantCall(ChatResponseSrv<List<CallParticipantVO>> result)
+        {
+            if (result.UniqueId == uniqueIds["MuteCallPaticipant"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnUNMuteParticipantCall(ChatResponseSrv<List<CallParticipantVO>> result)
+        {
+            if (result.UniqueId == uniqueIds["UNMuteCallPaticipant"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnTurnOnVideoCall(ChatResponseSrv<List<CallParticipantVO>> result)
+        {
+            if (result.UniqueId == uniqueIds["TurnOnVideoCall"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnTurnOffVideoCall(ChatResponseSrv<List<CallParticipantVO>> result)
+        {
+            if (result.UniqueId == uniqueIds["TurnOffVideoCall"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnLeaveCall(ChatResponseSrv<LeaveCallVO> result)
+        {
+            if (result.UniqueId == uniqueIds["LeaveCall"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnStartRecording(ChatResponseSrv<Participant> result) {
+            if (result.UniqueId == uniqueIds["StartRecording"])
+            {
+                // Add your logic
+            }
+        }
+
+        private void OnCallEnded(ChatResponseSrv<long> result)
+        {
+            var callId = result.Result;
+        }
+
+        private void OnJoinedCallParticipants(ChatResponseSrv<List<CallParticipantVO>> result)
+        {
+
+        }
+
+        private void OnActiveCallParticipants(ChatResponseSrv<List<CallParticipantVO>> result)
+        {
+
+        }
+
+        private void OnGetCallsList(ChatResponseSrv<List<CallVO>> result)
+        {
+
+        }
+
+        private void OnGetUserInfo(ChatResponseSrv<GetUserInfoResponse> result)
+        {
+            userInfo = result.Result;
         }
 
         #endregion Response

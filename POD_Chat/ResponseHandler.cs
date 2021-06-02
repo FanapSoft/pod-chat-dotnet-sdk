@@ -72,6 +72,23 @@ namespace POD_Chat
         public event ChatMessageReceived<ChatResponseSrv<UnreadMessageCountModel>> AllUnreadMessageCount_MessageReceived;
         public event ChatMessageReceived<ChatResponseSrv<AsyncErrorMessage>> ChatError_MessageReceived;
         public event ChatMessageReceived<AsyncErrorMessage> AsyncError;
+        public event ChatMessageReceived<ChatResponseSrv<CreateCallVO>> CallRequest_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<CreateCallVO>> CallSessionCreated_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<CallVO>> RejectCall_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<DeliverCallRequestVO>> DeliverCall_MessageRecevied;
+        public event ChatMessageReceived<ChatResponseSrv<StartCallVO>> StartCall_MessageRecevied;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallParticipantVO>>> RemoveCallParticipant_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallParticipantVO>>> MuteCallParticipant_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallParticipantVO>>> UNMuteCallParticipant_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallParticipantVO>>> TurnOnVideoCall_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallParticipantVO>>> TurnOffVideoCall_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<LeaveCallVO>> LeaveCall_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<Participant>> StartRecording_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<Participant>> StopRecording_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<long>> EndCall_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallParticipantVO>>> CallJoinedParticipants_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallParticipantVO>>> ActiveCallParticipants_MessageReceived;
+        public event ChatMessageReceived<ChatResponseSrv<List<CallVO>>> GetCallsList_MessageReceived;
 
         #endregion Event
 
@@ -94,7 +111,7 @@ namespace POD_Chat
                         HandleGetThreads(chatMessage);
                         break;
 
-                    case ChatMessageType.INVITATION:
+                    case ChatMessageType.CREATE_THREAD:
                         HandleCreateThread(chatMessage);
                         break;
 
@@ -249,12 +266,64 @@ namespace POD_Chat
                     case ChatMessageType.ERROR:
                         HandleError(chatMessage);
                         break;
+
+                    // Call
+                    case ChatMessageType.CALL_REQUEST:
+                        HandleCallRequest(chatMessage);
+                        break;
+                    case ChatMessageType.REJECT_CALL:
+                        HandleRejectCall(chatMessage);
+                        break;
+                    case ChatMessageType.DELIVERED_CALL_REQUEST:
+                        HandleDeliveredCall(chatMessage);
+                        break;
+                    case ChatMessageType.START_CALL:
+                        HandleCallStarted(chatMessage);
+                        break;
+                    case ChatMessageType.REMOVE_CALL_PARTICIPANT:
+                        HandleRemoveCallParticipant(chatMessage);
+                        break;
+                    case ChatMessageType.MUTE_CALL_PARTICIPANT:
+                        HandleMuteCallParticipant(chatMessage);
+                        break;
+                    case ChatMessageType.UNMUTE_CALL_PARTICIPANT:
+                        HandleUnMuteCallParticipant(chatMessage);
+                        break;
+                    case ChatMessageType.TURN_ON_VIDEO_CALL:
+                        HandleTurnOnVideoCall(chatMessage);
+                        break;
+                    case ChatMessageType.TURN_OFF_VIDEO_CALL:
+                        HandleTurnOffVideoCall(chatMessage);
+                        break;
+                    case ChatMessageType.LEAVE_CALL:
+                        HandleLeaveCall(chatMessage);
+                        break;
+                    case ChatMessageType.CALL_SESSION_CREATED:
+                        HandleCallSessionCreated(chatMessage);
+                        break;
+                    case ChatMessageType.START_RECORDING:
+                        HandleStartRecording(chatMessage);
+                        break;
+                    case ChatMessageType.STOP_RECORDING:
+                        HandleStopRecording(chatMessage);
+                        break;
+                    case ChatMessageType.END_CALL:
+                        HandleEndCall(chatMessage);
+                        break;
+                    case ChatMessageType.CALL_PARTICIPANT_JOINED:
+                        HandleCallJoinedParticipants(chatMessage);
+                        break;
+                    case ChatMessageType.ACTIVE_CALL_PARTICIPANTS:
+                        HandleActiveCallParticipants(chatMessage);
+                        break;
+                    case ChatMessageType.GET_CALLS:
+                        HandleGetCallLists(chatMessage);
+                        break;                        
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-
             }
         }
 
@@ -781,6 +850,143 @@ namespace POD_Chat
         }
 
         #endregion Ping
+
+        #region Call
+        private void HandleCallRequest(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var callResponse = JsonConvert.DeserializeObject<CreateCallVO>(chatMessage.Content);
+            var wrappedResult = Wrap(callResponse, chatMessage);
+            CallRequest_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleRejectCall(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var callVO = JsonConvert.DeserializeObject<CallVO>(chatMessage.Content);
+            var wrappedResult = Wrap(callVO, chatMessage);
+            RejectCall_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleDeliveredCall(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var deliveredCall = JsonConvert.DeserializeObject<DeliverCallRequestVO>(chatMessage.Content);
+            var wrappedResult = Wrap(deliveredCall, chatMessage);
+            DeliverCall_MessageRecevied?.Invoke(wrappedResult);
+        }
+
+        private void HandleCallStarted(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var callStart = JsonConvert.DeserializeObject<StartCallVO>(chatMessage.Content);
+            var wrappedResult = Wrap(callStart, chatMessage);
+            StartCall_MessageRecevied?.Invoke(wrappedResult);
+        }
+
+        private void HandleRemoveCallParticipant(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var removeCallParticipant = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);
+            var wrappedResult = Wrap(removeCallParticipant, chatMessage);
+            RemoveCallParticipant_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleMuteCallParticipant(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var participants = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);          
+            var wrappedResult = Wrap(participants, chatMessage);
+            MuteCallParticipant_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleUnMuteCallParticipant(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var participants = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);            
+            var wrappedResult = Wrap(participants, chatMessage);
+            UNMuteCallParticipant_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleTurnOnVideoCall(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var callParticipantsVO = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);
+            var wrappedResult = Wrap(callParticipantsVO, chatMessage);
+            TurnOnVideoCall_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleTurnOffVideoCall(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var turnOffVideoCall = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);
+            var wrappedResult = Wrap(turnOffVideoCall, chatMessage);
+            TurnOffVideoCall_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleLeaveCall(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var paticipants = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);
+            var leaveCallVO = new LeaveCallVO { CallId = chatMessage.SubjectId.Value, Participants = paticipants };
+            var wrappedResult = Wrap(leaveCallVO, chatMessage);
+            LeaveCall_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleCallSessionCreated(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var createCallVO = JsonConvert.DeserializeObject<CreateCallVO>(chatMessage.Content);
+            var wrappedResult = Wrap(createCallVO, chatMessage);
+            CallSessionCreated_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleStartRecording(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var participant = JsonConvert.DeserializeObject<Participant>(chatMessage.Content);
+            var wrappedResult = Wrap(participant, chatMessage);
+            StartRecording_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleStopRecording(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var participant = JsonConvert.DeserializeObject<Participant>(chatMessage.Content);
+            var wrappedResult = Wrap(participant, chatMessage);
+            StopRecording_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleEndCall(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var wrappedResult = Wrap(chatMessage.SubjectId.Value, chatMessage);
+            EndCall_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleCallJoinedParticipants(ChatMessageVo chatMessage) {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var participant = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);
+            var wrappedResult = Wrap(participant, chatMessage);
+            CallJoinedParticipants_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleActiveCallParticipants(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var participant = JsonConvert.DeserializeObject<List<CallParticipantVO>>(chatMessage.Content);
+            var wrappedResult = Wrap(participant, chatMessage);
+            ActiveCallParticipants_MessageReceived?.Invoke(wrappedResult);
+        }
+
+        private void HandleGetCallLists(ChatMessageVo chatMessage)
+        {
+            PodLogger.Logger.Info($"UniqueId = {chatMessage.UniqueId} : {chatMessage.Content}");
+            var callListVO = JsonConvert.DeserializeObject<List<CallVO>>(chatMessage.Content);
+            var wrappedResult = Wrap(callListVO, chatMessage);
+            GetCallsList_MessageReceived?.Invoke(wrappedResult);
+        }
+        #endregion Call
 
         private static ChatResponseSrv<T> Wrap<T>(T result, ChatMessageVo chatMessage)
         {
