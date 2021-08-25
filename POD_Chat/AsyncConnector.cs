@@ -16,7 +16,7 @@ namespace POD_Chat
         #region Field
 
         private Timer pingTimer;
-        private TimeSpan lastSentMessageTime;
+        private DateTime lastSentMessageTime;
         private readonly AsyncService asyncService;
         private readonly ChatConfig chatConfig;
 
@@ -41,7 +41,7 @@ namespace POD_Chat
         {
             var chatMessage = WrapMessage(content, type, subjectId);
             asyncService.SendMessage(chatMessage);
-            lastSentMessageTime = DateTime.Now.TimeOfDay;
+            lastSentMessageTime = DateTime.UtcNow;
             return chatMessage.UniqueId;
         }
 
@@ -53,7 +53,7 @@ namespace POD_Chat
             chatMessage.MessageType = content.MessageType;
             chatMessage.RepliedTo = repliedTo;
             asyncService.SendMessage(chatMessage);
-            lastSentMessageTime = DateTime.Now.TimeOfDay;
+            lastSentMessageTime = DateTime.UtcNow;
             return chatMessage.UniqueId;
         }
 
@@ -62,7 +62,7 @@ namespace POD_Chat
             var chatMessage = WrapMessage(content, type, threadId);
             chatMessage.SystemMetadata = content.SystemMetadata;
             asyncService.SendMessage(chatMessage);
-            lastSentMessageTime = DateTime.Now.TimeOfDay;
+            lastSentMessageTime = DateTime.UtcNow;
             return chatMessage.UniqueId;
         }
 
@@ -77,7 +77,7 @@ namespace POD_Chat
 
             chatMessage.UniqueId = forwardUniqueIds.ToJson();
             asyncService.SendMessage(chatMessage);
-            lastSentMessageTime = DateTime.Now.TimeOfDay;
+            lastSentMessageTime = DateTime.UtcNow;
             return forwardUniqueIds;
         }
 
@@ -100,7 +100,7 @@ namespace POD_Chat
             chatMessage.UniqueId = null;
             chatMessage.Content = contentObj.ToJson();
             asyncService.SendMessage(chatMessage);
-            lastSentMessageTime = DateTime.Now.TimeOfDay;
+            lastSentMessageTime = DateTime.UtcNow;
             return multipleDeleteUniqueIds;
         }
 
@@ -116,7 +116,7 @@ namespace POD_Chat
             uniqueIds.Add(content.MessageInput.UniqueId);
             uniqueIds.Add(chatMessage.UniqueId);                       
             asyncService.SendMessage(chatMessage);
-            lastSentMessageTime = DateTime.Now.TimeOfDay;
+            lastSentMessageTime = DateTime.UtcNow;
             return uniqueIds.ToArray();
         }
 
@@ -145,11 +145,11 @@ namespace POD_Chat
         /// </summary>
         private void Ping()
         {
-            var lastSentMessageTimeout = new TimeSpan(9000);
-            var currentTime = DateTime.Now.TimeOfDay;
-            if (currentTime - lastSentMessageTime > lastSentMessageTimeout)
+            var lastSentMessageTimeout = new TimeSpan(90000000);
+            var currentTime = DateTime.UtcNow;
+            if (currentTime.Ticks - lastSentMessageTime.Ticks > lastSentMessageTimeout.Ticks)
             {
-                Execute(null, ChatMessageType.PING);
+                _ = Execute(null, ChatMessageType.PING);
             }
         }
 
