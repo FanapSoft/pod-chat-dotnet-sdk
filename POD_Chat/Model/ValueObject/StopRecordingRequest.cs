@@ -7,10 +7,12 @@ namespace POD_Chat.Model.ValueObject
         public long CallId { get; set; }
         public long[] UserIds { get; set; }
 
-        public StopRecordingRequest(long callId , long[] userIds)
+        public StopRecordingRequest(long callId , long[] userIds, string typeCode = null, string uniqueId = null)
         {
             CallId = callId;
             UserIds = userIds;
+            TypeCode = typeCode;
+            UniqueId = uniqueId;
         }
 
         public override string GetJsonContent()

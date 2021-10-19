@@ -20,6 +20,7 @@ namespace POD_Chat.Model.ValueObject
         {
             CallId = builder.GetCallId();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -31,6 +32,7 @@ namespace POD_Chat.Model.ValueObject
         {
             private long callId;
             private string typeCode;
+            private string uniqueId;
 
             public Builder(long callId ) {
                 this.callId = callId;
@@ -41,7 +43,18 @@ namespace POD_Chat.Model.ValueObject
                 return callId;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }
@@ -51,7 +64,6 @@ namespace POD_Chat.Model.ValueObject
                 this.typeCode = typeCode;
                 return this;
             }
-
 
             public EndCallRequest Build()
             {

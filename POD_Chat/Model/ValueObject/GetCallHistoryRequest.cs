@@ -36,6 +36,7 @@ namespace POD_Chat.Model.ValueObject
             Count = builder.GetCount();
             Offset = builder.GetOffset();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
             CallIds = builder.GetCallIds();
             Type = builder.GetCallType();
             Name = builder.GetName();
@@ -58,6 +59,7 @@ namespace POD_Chat.Model.ValueObject
             private long? creatorCoreUserId;
             private long? creatorSsoId;
             private string typeCode;
+            private string uniqueId;
 
             internal int GetCount()
             {
@@ -81,7 +83,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

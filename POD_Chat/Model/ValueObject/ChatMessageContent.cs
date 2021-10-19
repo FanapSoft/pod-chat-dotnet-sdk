@@ -9,5 +9,8 @@ namespace POD_Chat.Model.ValueObject
 
         [JsonProperty(PropertyName = "typeCode")]
         public string TypeCode { get; set; }
+
+        [JsonProperty(PropertyName = "uniqueId")]
+        public string UniqueId { get; set; }
     }
 }

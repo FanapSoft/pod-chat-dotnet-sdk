@@ -38,6 +38,7 @@ namespace POD_Chat.Model.ValueObject
             [Required]
             private long? threadId;
             private string typeCode;
+            private string uniqueId;
 
             internal string GetBotName()
             {
@@ -63,7 +64,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

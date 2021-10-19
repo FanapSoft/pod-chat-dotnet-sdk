@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace POD_Chat.Model.ValueObject
 {
-    public class TerminateCallRequest
+    public class TerminateCallRequest:ChatMessageContent
     {
         public static Builder ConcreteBuilder => new Builder();
 
@@ -13,12 +13,21 @@ namespace POD_Chat.Model.ValueObject
         public TerminateCallRequest(Builder builder)
         {
             CallId = builder.GetCallId();
+            TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
-        
+
+        public override string GetJsonContent()
+        {
+            return null;
+        }
+
         public class Builder
         {
             private long callId;
             private string uniqueId;
+            private string typeCode;
+
 
             internal long GetCallId()
             {
@@ -42,6 +51,17 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
+            public string GetTypeCode()
+            {
+                return typeCode;
+            }
+
+            public Builder SetTypeCode(string typeCode)
+            {
+                this.typeCode = typeCode;
+                return this;
+            }
+
             public TerminateCallRequest Build()
             {
                 var hasErrorFields = this.ValidateByAttribute();
@@ -54,5 +74,7 @@ namespace POD_Chat.Model.ValueObject
                 return new TerminateCallRequest(this);
             }
         }
+
+        
     }
 }

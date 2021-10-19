@@ -85,6 +85,8 @@ namespace POD_Chat.Model.ValueObject
             AllMentioned = builder.GetAllMentioned();
             Count = builder.GetCount();
             Offset = builder.GetOffset();
+            UniqueId = builder.GetUniqueId();
+            TypeCode = builder.GetTypeCode();
         }
 
         public override string GetJsonContent()
@@ -113,6 +115,8 @@ namespace POD_Chat.Model.ValueObject
             private bool? allMentioned;
             private int count;
             private int offset;
+            private string typeCode;
+            private string uniqueId;
 
             internal long? GetThreadId()
             {
@@ -316,6 +320,28 @@ namespace POD_Chat.Model.ValueObject
             public Builder SetOffset(int offset)
             {
                 this.offset = offset;
+                return this;
+            }
+
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
+            {
+                return typeCode;
+            }
+
+            public Builder SetTypeCode(string typeCode)
+            {
+                this.typeCode = typeCode;
                 return this;
             }
 

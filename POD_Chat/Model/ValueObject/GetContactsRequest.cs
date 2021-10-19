@@ -26,9 +26,6 @@ namespace POD_Chat.Model.ValueObject
         [JsonProperty("id")]
         public long? Id { get; }
 
-        [JsonProperty("uniqueId")]
-        public string UniqueId { get; }
-
         public GetContactsRequest(Builder builder)
         {
             Size = builder.GetSize();

@@ -33,6 +33,7 @@ namespace POD_Chat.Model.ValueObject
             UserNames = builder.GetUserNames();
             CoreUserIds = builder.GetCoreUserIds();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -55,6 +56,7 @@ namespace POD_Chat.Model.ValueObject
             private List<InviteVo> userNames;
             private List<InviteVo> coreUserIds;
             private string typeCode;
+            private string uniqueId;
 
             internal long? GetThreadId()
             {
@@ -112,7 +114,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

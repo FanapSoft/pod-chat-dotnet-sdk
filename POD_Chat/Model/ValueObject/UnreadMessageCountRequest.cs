@@ -14,6 +14,7 @@ namespace POD_Chat.Model.ValueObject
         {
             Mute = builder.GetMute();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -25,6 +26,7 @@ namespace POD_Chat.Model.ValueObject
         {
             private bool? mute;
             private string typeCode;
+            private string uniqueId;
 
             internal bool? GetMute()
             {
@@ -36,8 +38,18 @@ namespace POD_Chat.Model.ValueObject
                 this.mute = mute;
                 return this;
             }
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
 
-            internal string GetTypeCode()
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

@@ -127,7 +127,7 @@ namespace POD_Chat
                 TypeCode = !string.IsNullOrEmpty(content?.TypeCode) ? content.TypeCode : "default",
                 Type = (int)type,
                 TokenIssuer = chatConfig.TokenIssuer,
-                UniqueId = Guid.NewGuid().ToString(),
+                UniqueId = content?.UniqueId ?? Guid.NewGuid().ToString(),
                 Token = chatConfig.Token,
                 Content = content?.GetJsonContent(),
                 SubjectId = subjectId

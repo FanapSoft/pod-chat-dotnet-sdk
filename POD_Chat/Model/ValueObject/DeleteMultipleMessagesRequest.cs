@@ -23,6 +23,7 @@ namespace POD_Chat.Model.ValueObject
             DeleteForAll = builder.GetDeleteForAll();
             MessageIds = builder.GetMessageIds();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -50,6 +51,7 @@ namespace POD_Chat.Model.ValueObject
             [Required]
             private long[] messageIds;
             private string typeCode;
+            private string uniqueId;
 
             internal bool GetDeleteForAll()
             {
@@ -73,7 +75,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

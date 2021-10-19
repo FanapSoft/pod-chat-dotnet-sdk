@@ -21,6 +21,7 @@ namespace POD_Chat.Model.ValueObject
             MessageId = builder.GetMessageId();
             OwnerId = builder.GetOwnerId();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -34,6 +35,7 @@ namespace POD_Chat.Model.ValueObject
             private long? messageId;
             private long? ownerId;
             private string typeCode;
+            private string uniqueId;
 
             internal long? GetMessageId()
             {
@@ -57,7 +59,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

@@ -42,6 +42,7 @@ namespace POD_Chat.Model.ValueObject
             Count = builder.GetCount();
             Offset = builder.GetOffset();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -60,6 +61,7 @@ namespace POD_Chat.Model.ValueObject
             private int count;
             private int offset;
             private string typeCode;
+            private string uniqueId;
 
             internal List<long> GetThreadIds()
             {
@@ -124,6 +126,16 @@ namespace POD_Chat.Model.ValueObject
             public Builder SetIsNew(bool isNew)
             {
                 this.isNew = isNew;
+                return this;
+            }
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
                 return this;
             }
 

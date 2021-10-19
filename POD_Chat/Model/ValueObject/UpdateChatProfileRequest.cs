@@ -17,6 +17,8 @@ namespace POD_Chat.Model.ValueObject
         {
             Bio = builder.GetBio();
             Metadata = builder.GetMetadata();
+            TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -28,6 +30,8 @@ namespace POD_Chat.Model.ValueObject
         {
             private string bio;
             private string metadata;
+            private string typeCode;
+            private string uniqueId;
 
             internal string GetBio()
             {
@@ -48,6 +52,28 @@ namespace POD_Chat.Model.ValueObject
             public Builder SetMetadata(string metadata)
             {
                 this.metadata = metadata;
+                return this;
+            }
+
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
+            {
+                return typeCode;
+            }
+
+            public Builder SetTypeCode(string typeCode)
+            {
+                this.typeCode = typeCode;
                 return this;
             }
 

@@ -32,6 +32,8 @@ namespace POD_Chat.Model.ValueObject
             Invitees = builder.GetInvitees();
             Type = builder.GetCallType();
             CreatorClientDto = builder.GetCreateClientDTO();
+            TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -45,6 +47,8 @@ namespace POD_Chat.Model.ValueObject
             private long? ThreadId;
             private CallType Type = CallType.VOICE_CALL;
             private SendClientDTO SendClientDTO;
+            private string typeCode;
+            private string uniqueId;
 
             public Builder(SendClientDTO sendClientDTO) {
                 SendClientDTO = sendClientDTO;
@@ -84,6 +88,28 @@ namespace POD_Chat.Model.ValueObject
             public Builder SetCallType(CallType type)
             {
                 this.Type = type;
+                return this;
+            }
+
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
+            {
+                return typeCode;
+            }
+
+            public Builder SetTypeCode(string typeCode)
+            {
+                this.typeCode = typeCode;
                 return this;
             }
 

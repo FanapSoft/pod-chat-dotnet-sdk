@@ -13,6 +13,7 @@ namespace POD_Chat.Model.ValueObject
         public string CellphoneNumber { get; }
         public string Email { get; }
         public string UniqueId { get; }
+        public string TypeCode { get; }
         public string Username { get; }
 
         public AddContactRequest(Builder builder)
@@ -22,6 +23,7 @@ namespace POD_Chat.Model.ValueObject
             CellphoneNumber = builder.GetCellphoneNumber();
             Email = builder.GetEmail();
             UniqueId = builder.GetUniqueId();
+            TypeCode = builder.GetTypeCode();
             Username = builder.GetUsername();
         }
         
@@ -34,6 +36,7 @@ namespace POD_Chat.Model.ValueObject
             [EmailAddress]
             private string email;
             private string uniqueId;
+            private string typeCode;
 
             [Required]
             private string username;
@@ -82,7 +85,7 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetUniqueId()
+            public string GetUniqueId()
             {
                 return uniqueId;
             }
@@ -90,6 +93,17 @@ namespace POD_Chat.Model.ValueObject
             public Builder SetUniqueId(string uniqueId)
             {
                 this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
+            {
+                return typeCode;
+            }
+
+            public Builder SetTypeCode(string typeCode)
+            {
+                this.typeCode = typeCode;
                 return this;
             }
 

@@ -802,19 +802,19 @@ namespace POD_Chat
 
         public string TerminateCall(TerminateCallRequest terminateCallRequest)
         {
-            var uniqueId = ServiceLocator.AsyncConnector.Execute(null, ChatMessageType.TERMINATE_CALL , subjectId:terminateCallRequest.CallId);
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(terminateCallRequest, ChatMessageType.TERMINATE_CALL , subjectId:terminateCallRequest.CallId);
             return uniqueId;
         }
 
         public string TurnOnVideoCall(TurnOnVideoCallRequest turnOnVideoCallRequest)
         {
-            var uniqueId = ServiceLocator.AsyncConnector.Execute(null, ChatMessageType.TURN_ON_VIDEO_CALL,subjectId:turnOnVideoCallRequest.CallId);
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(turnOnVideoCallRequest, ChatMessageType.TURN_ON_VIDEO_CALL,subjectId:turnOnVideoCallRequest.CallId);
             return uniqueId;
         }
 
         public string TurnOffVideoCall(TurnOffVideoCallRequest turnOffVideoCallRequest)
         {
-            var uniqueId = ServiceLocator.AsyncConnector.Execute(null, ChatMessageType.TURN_OFF_VIDEO_CALL,subjectId:turnOffVideoCallRequest.CallId);
+            var uniqueId = ServiceLocator.AsyncConnector.Execute(turnOffVideoCallRequest, ChatMessageType.TURN_OFF_VIDEO_CALL,subjectId:turnOffVideoCallRequest.CallId);
             return uniqueId;
         }
 

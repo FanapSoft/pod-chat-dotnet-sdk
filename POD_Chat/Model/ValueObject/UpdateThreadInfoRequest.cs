@@ -44,6 +44,7 @@ namespace POD_Chat.Model.ValueObject
             }
 
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetTypeCode();
         }
 
         public override string GetJsonContent()
@@ -63,6 +64,7 @@ namespace POD_Chat.Model.ValueObject
             private UploadRequest uploadInput;
             private string userGroupHash;
             private string typeCode;
+            private string uniqueId;
 
             internal string GetTitle()
             {
@@ -145,7 +147,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

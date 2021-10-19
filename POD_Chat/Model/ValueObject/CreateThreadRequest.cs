@@ -47,6 +47,7 @@ namespace POD_Chat.Model.ValueObject
             UniqueName = builder.GetUniqueName();
             UploadInput = builder.GetUploadInput();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -68,6 +69,7 @@ namespace POD_Chat.Model.ValueObject
             private string uniqueName;
             private UploadRequest uploadInput;
             private string typeCode;
+            private string uniqueId;
 
             internal List<InviteVo> GetInvitees()
             {
@@ -160,7 +162,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

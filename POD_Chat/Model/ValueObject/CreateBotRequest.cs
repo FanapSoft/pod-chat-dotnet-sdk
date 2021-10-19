@@ -18,6 +18,7 @@ namespace POD_Chat.Model.ValueObject
         {
             BotName = builder.GetBotName();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -30,6 +31,7 @@ namespace POD_Chat.Model.ValueObject
             [Required]
             private string botName;
             private string typeCode;
+            private string uniqueId;
 
             internal string GetBotName()
             {
@@ -43,8 +45,19 @@ namespace POD_Chat.Model.ValueObject
                 this.botName = botName;
                 return this;
             }
+            
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
 
-            internal string GetTypeCode()
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

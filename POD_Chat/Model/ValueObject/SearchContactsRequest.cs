@@ -32,6 +32,7 @@ namespace POD_Chat.Model.ValueObject
             Query = builder.GetQuery();
             Id = builder.GetId();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
             OwnerId = builder.GetOwnerId();
             Offset = builder.GetOffset();
             Size = builder.GetSize();

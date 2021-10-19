@@ -34,6 +34,7 @@ namespace POD_Chat.Model.ValueObject
             Count = builder.GetCount();
             Offset = builder.GetOffset();
             TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -51,6 +52,7 @@ namespace POD_Chat.Model.ValueObject
             private int count;
             private int offset;
             private string typeCode;
+            private string uniqueId;
 
             internal long? GetThreadId()
             {
@@ -107,7 +109,18 @@ namespace POD_Chat.Model.ValueObject
                 return this;
             }
 
-            internal string GetTypeCode()
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
             {
                 return typeCode;
             }

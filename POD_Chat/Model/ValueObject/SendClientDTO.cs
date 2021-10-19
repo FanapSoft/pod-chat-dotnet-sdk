@@ -43,6 +43,8 @@ namespace POD_Chat.Model.ValueObject
             Mute = builder.GetIsMute();
             Video = builder.GetIsVideo();
             Desc = builder.GetDesc();
+            TypeCode = builder.GetTypeCode();
+            UniqueId = builder.GetUniqueId();
         }
 
         public override string GetJsonContent()
@@ -60,6 +62,8 @@ namespace POD_Chat.Model.ValueObject
             private bool mute = false;
             private bool video = false;
             private string desc;
+            private string typeCode;
+            private string uniqueId;
 
             internal string GetClientId()
             {
@@ -122,6 +126,27 @@ namespace POD_Chat.Model.ValueObject
             public Builder SetDesc(string desc)
             {
                 this.desc = desc;
+                return this;
+            }
+            public string GetUniqueId()
+            {
+                return uniqueId;
+            }
+
+            public Builder SetUniqueId(string uniqueId)
+            {
+                this.uniqueId = uniqueId;
+                return this;
+            }
+
+            public string GetTypeCode()
+            {
+                return typeCode;
+            }
+
+            public Builder SetTypeCode(string typeCode)
+            {
+                this.typeCode = typeCode;
                 return this;
             }
 
