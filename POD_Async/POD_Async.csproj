@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Company>Fanap</Company>
-    <Authors>Nadia Anvari</Authors>
-    <Version>0.9.1.2</Version>
+    <Authors>Hamed Hosseini</Authors>
+    <Version>0.9.1.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Apache.NMS.ActiveMQ" Version="1.7.2" />
+    <PackageReference Include="Apache.NMS.ActiveMQ" Version="1.8.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="NLog" Version="4.7.1" />
     <PackageReference Include="RestSharp" Version="106.11.3" />

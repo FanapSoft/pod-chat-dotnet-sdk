@@ -20,7 +20,7 @@ namespace POD_Test
     {
         #region Setup
 
-        private string apiToken = "**********";
+        private readonly string apiToken = "**********";
         private string imagePath;
 
         [SetUp]
@@ -360,7 +360,6 @@ namespace POD_Test
         public void CreateThreadWithFileMessage()
         {
             var resultUniqueId = string.Empty;
-            long threadId = 0;
             var manualResetEvent = new ManualResetEvent(false);
             var contactId = AddContact();
 
@@ -428,10 +427,10 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
 
             var updateThreadInfoRequest = UpdateThreadInfoRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetImage("")
                 //.SetDescription("")
                 .SetTitle("tst updateThreadInfo")
@@ -499,11 +498,11 @@ namespace POD_Test
             var resultUniqueId = string.Empty;
             long participantId = 0;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreatePublicThread();
+            var (ThreadId, UniqueName, ContactId) = CreatePublicThread();
 
             var addParticipants = AddParticipantsRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
-                .SetContactIds(new [] {threadInfo.ContactId})
+                .SetThreadId(ThreadId)
+                .SetContactIds(new [] {ContactId})
                 .Build();
 
             var generatedUniqueId = ServiceLocator.ChatService.AddParticipants(addParticipants);
@@ -520,7 +519,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with AddParticipants");
-            return (participantId, threadInfo.ThreadId);
+            return (participantId, ThreadId);
         }
 
         [Test]
@@ -528,9 +527,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var participantInfo = AddParticipantsImplement();
+            var (ParticipantId, ThreadId) = AddParticipantsImplement();
             var threadParticipant = GetThreadParticipantsRequest.ConcreteBuilder
-                .SetThreadId(participantInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 .Build();
 
             var generatedUniqueId = ServiceLocator.ChatService.GetThreadParticipants(threadParticipant);
@@ -553,10 +552,10 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var participantInfo = AddParticipantsImplement();
+            var (ParticipantId, ThreadId) = AddParticipantsImplement();
             var requestRemoveParticipants = RemoveParticipantsRequest.ConcreteBuilder
-                .SetThreadId(participantInfo.ThreadId)
-                .SetParticipantIds(new[] {participantInfo.ParticipantId})
+                .SetThreadId(ThreadId)
+                .SetParticipantIds(new[] {ParticipantId})
                 .Build();
 
             var generatedUniqueId = ServiceLocator.ChatService.RemoveParticipants(requestRemoveParticipants);
@@ -580,9 +579,9 @@ namespace POD_Test
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
             var random = new Random();
-            var threadInfo = CreatePublicThread();
+            var (ThreadId, UniqueName, ContactId) = CreatePublicThread();
             var requestGetHistory = JoinPublicThreadRequest.ConcreteBuilder
-                .SetUniqueName(threadInfo.UniqueName)
+                .SetUniqueName(UniqueName)
                 .Build();
 
             var generatedUniqueId = ServiceLocator.ChatService.JoinPublicThread(requestGetHistory);
@@ -631,9 +630,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
             var threadGeneralRequest = ThreadGeneralRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetTypeCode("")
                 .Build();
 
@@ -663,9 +662,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
             var threadGeneralRequest = ThreadGeneralRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetTypeCode("")
                 .Build();
 
@@ -683,7 +682,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with MuteThread");
-            return threadInfo.ThreadId;
+            return ThreadId;
         }
 
         [Test]
@@ -818,9 +817,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
             var threadGeneralRequest = ThreadGeneralRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetTypeCode("")
                 .Build();
 
@@ -838,7 +837,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with PinThread");
-            return threadInfo.ThreadId;
+            return ThreadId;
         }
 
         [Test]
@@ -909,9 +908,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
             var setRemoveRoleRequest = SetRemoveRoleRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 .SetRoles(new List<RoleModel>
                 {
                     RoleModel.ConcreteBuilder.SetUserId(0).SetRoles(new []{RoleType.add_new_user}).Build()
@@ -933,7 +932,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with SetAdmin");
-            return threadInfo.ThreadId;
+            return ThreadId;
         }
 
         
@@ -977,10 +976,10 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreatePublicThread();
+            var (ThreadId, UniqueName, ContactId) = CreatePublicThread();
             var userId = 0;
             var setRemoveRoleRequest = SetRemoveRoleRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 .SetRoles(new List<RoleModel>
                 {
                     RoleModel.ConcreteBuilder.SetUserId(userId).SetRoles(new []{RoleType.read_thread}).Build()
@@ -1002,7 +1001,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with SetAuditor");
-            return (userId, threadInfo.ThreadId);
+            return (userId, ThreadId);
         }
 
         [Test]
@@ -1041,9 +1040,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
             var threadParticipant = GetThreadParticipantsRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetName("")
                 //.SetOffset(0)
                 //.SetCount(2)
@@ -1071,9 +1070,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
             var threadGeneralRequest = ThreadGeneralRequest.ConcreteBuilder
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetTypeCode("")
                 .Build();
 
@@ -1108,10 +1107,10 @@ namespace POD_Test
             var resultUniqueId = string.Empty;
             long messageId = 0;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreateThreadImplement();
+            var (ContactId, ThreadId, UserGroupHash) = CreateThreadImplement();
             var requestThread = SendTextMessageRequest.ConcreteBuilder
                 .SetTextMessage("salam Send2")
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 .SetMessageType(MessageType.TEXT)
                 .Build();
 
@@ -1139,7 +1138,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with SendMessage");
-            return (threadInfo.ThreadId, messageId,threadInfo.UserGroupHash);
+            return (ThreadId, messageId,UserGroupHash);
         }
 
         public (long ThreadId, long MessageId) SendMessageInPublicGroupImplement()
@@ -1147,10 +1146,10 @@ namespace POD_Test
             var resultUniqueId = string.Empty;
             long messageId = 0;
             var manualResetEvent = new ManualResetEvent(false);
-            var threadInfo = CreatePublicThread();
+            var (ThreadId, UniqueName, ContactId) = CreatePublicThread();
             var requestThread = SendTextMessageRequest.ConcreteBuilder
                 .SetTextMessage("tst SendMessageInPublicGroup")
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 .SetMessageType(MessageType.TEXT)
                 .Build();
 
@@ -1178,7 +1177,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with SendMessage");
-            return (threadInfo.ThreadId, messageId);
+            return (ThreadId, messageId);
         }
 
         [Test]
@@ -1187,12 +1186,12 @@ namespace POD_Test
             var resultUniqueId = string.Empty;
             var sentFired = false;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var requestReplyMessage = ReplyTextMessageRequest.ConcreteBuilder
-                .SetRepliedTo(messageInfo.MessageId)
+                .SetRepliedTo(MessageId)
                 .SetTextMessageRequest(SendTextMessageRequest.ConcreteBuilder.SetMessageType(MessageType.TEXT)
                 .SetTextMessage("tst")
-                .SetThreadId(messageInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 .Build())
                 .Build();
 
@@ -1228,10 +1227,10 @@ namespace POD_Test
             var resultUniqueId = string.Empty;
             var sentFired = false;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var forwardMessage = ForwardMessageRequest.ConcreteBuilder
-                .SetThreadId(messageInfo.ThreadId)
-                .SetMessageIds(new [] { messageInfo.MessageId })
+                .SetThreadId(ThreadId)
+                .SetMessageIds(new [] { MessageId })
                 .Build();
 
             var generatedUniqueId = ServiceLocator.ChatService.ForwardMessage(forwardMessage)[0];
@@ -1265,9 +1264,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var deleteMessage = DeleteMessageRequest.ConcreteBuilder
-                .SetMessageId(messageInfo.MessageId)
+                .SetMessageId(MessageId)
                 .SetDeleteForAll(false)
                 .Build();
 
@@ -1292,11 +1291,11 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var messageInfo2 = SendMessageImplement();
 
             var deleteMessage = DeleteMultipleMessagesRequest.ConcreteBuilder
-                .SetMessageIds(new[] { messageInfo.MessageId, messageInfo2.MessageId })
+                .SetMessageIds(new[] { MessageId, messageInfo2.MessageId })
                 //.SetDeleteForAll(false)
                 //.SetTypeCode("")
                 .Build();
@@ -1322,9 +1321,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var requestGetHistory = GetHistoryRequest.ConcreteBuilder
-                .SetThreadId(messageInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetId(0)
                 //.SetOffset(0)
                 //.SetCount(3)
@@ -1365,9 +1364,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var editMessageRequest = EditMessageRequest.ConcreteBuilder
-                .SetMessageId(messageInfo.MessageId)
+                .SetMessageId(MessageId)
                 .SetTextMessage("test 2021")
                 //.SetSystemMetadata("")              
                 //.SetTypeCode("")
@@ -1394,9 +1393,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var threadGeneralRequest = ThreadGeneralRequest.ConcreteBuilder
-                .SetThreadId(messageInfo.MessageId)
+                .SetThreadId(MessageId)
                 //.SetTypeCode("")
                 .Build();
 
@@ -1421,9 +1420,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var getMentionedRequest = GetMentionedRequest.ConcreteBuilder
-                .SetThreadId(messageInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetOffset(0)
                 //.SetCount(2)
                 //.SetAllMentioned(false)
@@ -1456,9 +1455,9 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageInPublicGroupImplement();
+            var (ThreadId, MessageId) = SendMessageInPublicGroupImplement();
             var pinUnpinMessageRequest = PinUnpinMessageRequest.ConcreteBuilder
-                .SetMessageId(messageInfo.MessageId)
+                .SetMessageId(MessageId)
                 //.SetNotifyAll(false)
                 //.SetTypeCode("")
                 .Build();
@@ -1477,7 +1476,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with PinMessage");
-            return messageInfo.MessageId;
+            return MessageId;
         }
 
         [Test]
@@ -1563,21 +1562,21 @@ namespace POD_Test
         {
             var resultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
-            var messageInfo = SendMessageImplement();
+            var (ThreadId, MessageId, UserGroupHash) = SendMessageImplement();
             var sendReplyFileMessageRequest = SendReplyFileMessageRequest.ConcreteBuilder
-                .SetRepliedTo(messageInfo.MessageId)
+                .SetRepliedTo(MessageId)
               .SetSendFileMessage(SendFileMessageRequest.ConcreteBuilder
-               .SetUserGroupHash(messageInfo.UserGroupHash)
-               .SetMessageInput(SendTextMessageRequest.ConcreteBuilder.SetThreadId(messageInfo.ThreadId)
+               .SetUserGroupHash(UserGroupHash)
+               .SetMessageInput(SendTextMessageRequest.ConcreteBuilder.SetThreadId(ThreadId)
                    .SetMessageType(MessageType.POD_SPACE_PICTURE)
-                   .SetTextMessage($"Reply to {messageInfo.MessageId}")
+                   .SetTextMessage($"Reply to {MessageId}")
                    //.SetMetadata("")
                    //.SetSystemMetadata("")
                    //.SetTypeCode("")
                    .Build())
              .SetUploadInput(UploadRequest.ConcreteBuilder
                                  .SetFilePath(imagePath)
-                                 .SetFileName($"File-{messageInfo.MessageId}")
+                                 .SetFileName($"File-{MessageId}")
                                  //.SetXC(0)
                                  //.SetYC(0)
                                  //.SetHC(0)
@@ -1687,10 +1686,10 @@ namespace POD_Test
             var participantResultUniqueId = string.Empty;
             var manualResetEvent = new ManualResetEvent(false);
             var botName = CreateBotImplement();
-            var threadInfo = CreatePublicThread();
+            var (ThreadId, UniqueName, ContactId) = CreatePublicThread();
 
             var addParticipantsRequest = AddParticipantsRequest.ConcreteBuilder
-               .SetThreadId(threadInfo.ThreadId)
+               .SetThreadId(ThreadId)
                .SetUserNames(new[] { botName })
                .Build();
 
@@ -1710,7 +1709,7 @@ namespace POD_Test
 
             var startAndStopBotRequest = StartAndStopBotRequest.ConcreteBuilder
                 .SetBotName(botName)
-                .SetThreadId(threadInfo.ThreadId)
+                .SetThreadId(ThreadId)
                 //.SetTypeCode("")
                 .Build();
 
@@ -1727,7 +1726,7 @@ namespace POD_Test
 
             manualResetEvent.WaitOne();
             Assert.AreEqual(resultUniqueId, generatedUniqueId, "There is Something wrong with StartBot");
-            return (botName, threadInfo.ThreadId);
+            return (botName, ThreadId);
         }
 
         [Test]

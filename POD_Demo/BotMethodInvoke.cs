@@ -14,7 +14,7 @@ namespace POD_Demo
 {
     public class BotMethodInvoke
     {
-        private Dictionary<string, string> uniqueIds;
+        private readonly Dictionary<string, string> uniqueIds;
         public BotMethodInvoke()
         {
             try

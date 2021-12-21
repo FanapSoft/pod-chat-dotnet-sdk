@@ -19,8 +19,8 @@ namespace POD_Demo
 {
     public class ChatMethodInvoke
     {
-        private Dictionary<string, string> uniqueIds;
-        private Dictionary<string, List<string>> multipleUniqueIds;
+        private readonly Dictionary<string, string> uniqueIds;
+        private readonly Dictionary<string, List<string>> multipleUniqueIds;
         private GetUserInfoResponse userInfo = null;
         public ChatMethodInvoke()
         {
@@ -30,7 +30,7 @@ namespace POD_Demo
                 //Add your log level
                 PodLogger.AddRule(LogLevel.Error, true, false);
                 //PodLogger.AddRule(LogLevel.Debug, true, false);
-                //PodLogger.AddRule(LogLevel.Info, true, false);               
+                //PodLogger.AddRule(LogLevel.Info, true, false);
 
                 //If youd to know what is log path
                 var logPath = PodLogger.LogPath;
@@ -129,7 +129,7 @@ namespace POD_Demo
 
                 //GetThreads();
                 //CreateThread();
-                //CreateThreadWithMessage();
+                CreateThreadWithMessage();
                 //UpdateThreadInfo();
                 //CreateThreadWithFileMessage();
                 //SendTextMessage();
@@ -174,7 +174,7 @@ namespace POD_Demo
                 //GetUnreadMessageCount();
                 //DownloadImage();
                 //DownloadFile();
-                StartCall();
+                //StartCall();
                 //StartGroupCall();
                 //GetCallsList();
                 //AddParticipantCall();
@@ -377,8 +377,8 @@ namespace POD_Demo
                     .SetCreateThreadInput(CreateThreadRequest.ConcreteBuilder
                                              .SetInvitees(new List<InviteVo>()
                                              {
-                                                  InviteVo.ConcreteBuilder.SetId("").SetIdType(InviteType.TO_BE_USER_CONTACT_ID).Build(),
-                                                  InviteVo.ConcreteBuilder.SetId("").SetIdType(InviteType.TO_BE_USER_ID).Build()
+                                                  InviteVo.ConcreteBuilder.SetId("63250").SetIdType(InviteType.TO_BE_USER_CONTACT_ID).Build(),
+                                                  //InviteVo.ConcreteBuilder.SetId("").SetIdType(InviteType.TO_BE_USER_ID).Build()
                                              })
                                              .SetType(ThreadType.NORMAL)
                                              .SetTitle("")
@@ -390,7 +390,7 @@ namespace POD_Demo
                                              .Build())
                     .SetMessageInput(CreateThreadMessageInput.ConcreteBuilder
                                              .SetMessageType(MessageType.TEXT)
-                                             .SetText("")
+                                             .SetText("Test create thread with message")
                                              //.SetForwardedMessageIds(new long[]{ 0 , 0})
                                              .Build())
                     .Build();
@@ -2294,7 +2294,7 @@ namespace POD_Demo
 
         private void OnCallEnded(ChatResponseSrv<long> result)
         {
-            var callId = result.Result;
+            //var callId = result.Result;
         }
 
         private void OnJoinedCallParticipants(ChatResponseSrv<List<CallParticipantVO>> result)

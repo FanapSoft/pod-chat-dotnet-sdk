@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="POD_Chat" Version="0.10.5.3" />
+    <!--<ProjectReference Include="..\POD_Chat\POD_Chat.csproj" />-->
+  </ItemGroup>
+
+</Project>

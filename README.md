@@ -10,7 +10,7 @@ Fanap's POD Chat Service - .Net SDK
 
 #### [Nuget](https://www.nuget.org/) 
 ```nuget
-Install-Package POD_Chat -Version 0.10.5.1
+Install-Package POD_Chat -Version 0.10.5.3
 ```
 
 ## Intit 
